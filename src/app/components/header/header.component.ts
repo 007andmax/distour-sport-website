@@ -25,8 +25,7 @@ export class HeaderComponent implements OnInit {
   }
   logOut() {
     this.userService.logOut().subscribe(data => {
-      let user = new User();
-      this.userStateService.setUserData(user);
+      window.location.href = "/";
     })
   }
   toggleLeftMenu() {
