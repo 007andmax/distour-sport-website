@@ -1,0 +1,88 @@
+<div class="tamara-head"><h1>Add funds to app Sport Challenges</h1></div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3>Add funds on 1 coints</h3>
+            </div>
+            <div class="tamara-body-body servcies-add">
+                <p>Requirements:</p>
+                <ol>
+                    <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
+                    <li>Bot banned</li>
+                </ol>
+                <p>Description:</p>
+                <ol>
+                    <li>The service refills the account in the mobile application for 1 coin</li>
+                    <li>Commission up to 5%</li>
+                    <li>Your account will be executed within 5 minutes</li>
+                    <li>Price 1 $</li>
+                </ol>
+                <button (click)="onInitPayeer(1)" *ngIf="!user.isAnonimno()">Add 1 coint</button>
+                <div class="out-money-sport" *ngIf="user.isAnonimno()">
+                    <h6>Please Sign in</h6>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3>Add funds on 5 coints</h3>
+            </div>
+            <div class="tamara-body-body servcies-add">
+                <p>Requirements:</p>
+                <ol>
+                    <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
+                    <li>Bot banned</li>
+                </ol>
+                <p>Description:</p>
+                <ol>
+                    <li>The service refills the account in the mobile application for 5 coin</li>
+                    <li>Commission up to 5%</li>
+                    <li>Your account will be executed within 5 minutes</li>
+                    <li>Price 5 $</li>
+                </ol>
+                <button (click)="onInitPayeer(5)" *ngIf="!user.isAnonimno()">Add 5 coint</button>
+             
+                <div class="out-money-sport" *ngIf="user.isAnonimno()">
+                    <h6>Please Sign in</h6>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3>Add funds on 20 coints</h3>
+            </div>
+            <div class="tamara-body-body servcies-add">
+                <p>Requirements:</p>
+                <ol>
+                    <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
+                    <li>Bot banned</li>
+                </ol>
+                <p>Description:</p>
+                <ol>
+                    <li>The service refills the account in the mobile application for 20 coin</li>
+                    <li>Commission up to 5%</li>
+                    <li>Your account will be executed within 5 minutes</li>
+                    <li>Price 20 $</li>
+                </ol>
+                <button (click)="onInitPayeer(20)" *ngIf="!user.isAnonimno()">Add 20 coint</button>
+             
+                <div class="out-money-sport" *ngIf="user.isAnonimno()">
+                    <h6>Please Sign in</h6>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

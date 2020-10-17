@@ -1,0 +1,25 @@
+
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Фото</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ngb-carousel *ngIf="images">
+        <ng-template ngFor let-item [ngForOf]="images" >
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="item" alt="Random first slide">
+                </div>
+                
+            </ng-template>
+        </ng-template>
+    
+    </ngb-carousel>
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="closeModal()">Ок</button>
+  </div>
+

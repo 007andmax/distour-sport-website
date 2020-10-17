@@ -1,0 +1,532 @@
+@charset "UTF-8";
+.csgo-head {
+  display: block;
+  width: 100%;
+  top: 0px;
+  height: 64px;
+  position: fixed;
+  background-color: #101010;
+  z-index: 1;
+}
+
+.csgo-head .container {
+  height: 64px;
+  position: relative;
+}
+
+.csgo-head .container .sing-in {
+  display: block;
+  width: 154px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 15px;
+  cursor: pointer;
+}
+
+.csgo-head .container .sing-in img {
+  display: block;
+  width: 154px;
+  height: 24px;
+}
+
+.csgo-head .container .money-info {
+  display: block;
+  height: auto;
+  vertical-align: middle;
+  position: absolute;
+  top: 18px;
+  right: 90px;
+}
+
+.csgo-head .container .money-info span {
+  color: #00c800;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.csgo-head .container .no-money span {
+  color: #ffffff !important;
+}
+
+.csgo-head .container .account-info {
+  display: block;
+  width: 60px;
+  height: 58px;
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  top: 0px;
+}
+
+.csgo-head .container .account-info .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  height: 58px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.csgo-head .container .account-info .avatar img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+}
+
+.csgo-head .container .account-info:hover .select {
+  display: block;
+}
+
+.csgo-head .container .account-info .select {
+  display: none;
+  top: 58px;
+  left: 0px;
+  width: 100px;
+  background-color: #101010;
+}
+
+.csgo-head .container .account-info .select li {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding: 5px 20px;
+  border-bottom: 1px solid #000000;
+}
+
+.csgo-head .container .account-info .select li:hover {
+  background-color: #303030;
+}
+
+.csgo-head .container .account-info .select li a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+}
+
+.csgo-head nav {
+  background-color: #101010 !important;
+  height: 64px !important;
+  line-height: 56px !important;
+}
+
+.csgo-head nav .navbar-brand img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 40px;
+}
+
+.csgo-head .nav-item a {
+  color: #666 !important;
+  font-size: 14px;
+  padding: 0px 15px !important;
+  line-height: 64px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.csgo-head .nav-item a:hover {
+  color: #333 !important;
+}
+
+.csgo-head .navbar-nav .active a {
+  color: #ffffff !important;
+}
+
+.csgo-head .dropdown-menu {
+  background-color: #101010;
+  border: 1px solid #303030;
+  padding: 0px;
+  top: 60px;
+  border-radius: 0px !important;
+}
+
+.csgo-head .dropdown-menu a {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  line-height: 26px;
+}
+
+.csgo-head .dropdown-menu a:hover {
+  color: rgba(255, 255, 255, 0.65) !important;
+  background-color: #303030;
+}
+
+.csgo-head .show .nav-link {
+  background-color: #eee;
+  color: #555;
+}
+
+.server-list-fon {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 115px 0px 0px 0px;
+}
+
+.server-list-fon .margin-servers {
+  margin: 0px 0px 20px 0px;
+}
+
+.server-list-fon .left-item-server {
+  display: inline-block;
+  width: 80px;
+  height: 95px;
+  background: #3a4a63;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  vertical-align: middle;
+}
+
+.server-list-fon .left-item-server .left-item-server-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.server-list-fon .right-item-server {
+  display: inline-block;
+  width: calc(100% - 80px);
+  height: auto;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  vertical-align: middle;
+}
+
+.server-list-fon .right-item-server .right-item-server-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0px;
+}
+
+.server-list-fon .right-item-server .right-item-server-fon {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.server-list-fon .right-item-server .right-item-server-fon p {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: 23px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0px;
+  text-align: center;
+}
+
+.server-list-fon .right-item-server .right-item-server-fon span {
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .server-list-fon .right-item-server .right-item-server-fon span {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .server-list-fon .right-item-server .right-item-server-fon span {
+    font-size: 14px;
+  }
+}
+
+.server-list {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 80px 0px 0px 0px;
+}
+
+.server-list .item-servers:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.server-list .head-server {
+  display: block;
+  width: 100%;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.server-list .head-server h3 {
+  line-height: 35px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.server-list .body-server {
+  display: block;
+  width: 100%;
+  height: 160px;
+}
+
+.server-list .body-server img {
+  display: block;
+  width: 100%;
+  height: 160px;
+}
+
+.server-list .status-server {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 37px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.server-list .status-server img {
+  display: inline-block;
+  height: 17.5px;
+  width: 17.5px;
+}
+
+.server-list .status-server p {
+  display: inline-block;
+  min-width: 10px;
+  height: auto;
+  font-size: 14px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0px 0px 0px 10px;
+}
+
+.server-list .status-server span {
+  float: right;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.staff, .bans, .rules {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 80px 0px 0px 0px;
+}
+
+.staff .panel, .bans .panel, .rules .panel {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.staff .panel .panel-heading, .bans .panel .panel-heading, .rules .panel .panel-heading {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+}
+
+.staff .panel .panel-heading h3, .bans .panel .panel-heading h3, .rules .panel .panel-heading h3 {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+}
+
+.staff .dataTables_wrapper, .bans .dataTables_wrapper, .rules .dataTables_wrapper {
+  padding: 0px;
+}
+
+.staff .dataTables_wrapper .row:first-child, .bans .dataTables_wrapper .row:first-child, .rules .dataTables_wrapper .row:first-child {
+  margin-bottom: 0px;
+  height: 35px;
+  padding: 5px 0px;
+}
+
+.staff .dataTables_wrapper .row:nth-child(2), .bans .dataTables_wrapper .row:nth-child(2), .rules .dataTables_wrapper .row:nth-child(2) {
+  margin: 0px -15px;
+}
+
+.staff .dataTables_filter input[type='search'], .staff .dataTables_filter select, .staff .dataTables_length input[type='search'], .staff .dataTables_length select, .bans .dataTables_filter input[type='search'], .bans .dataTables_filter select, .bans .dataTables_length input[type='search'], .bans .dataTables_length select, .rules .dataTables_filter input[type='search'], .rules .dataTables_filter select, .rules .dataTables_length input[type='search'], .rules .dataTables_length select {
+  height: auto;
+  background-color: #303030;
+  border: 1px solid #303030;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0px;
+  height: 30px !important;
+}
+
+.staff .dataTables_filter select, .staff .dataTables_length select, .bans .dataTables_filter select, .bans .dataTables_length select, .rules .dataTables_filter select, .rules .dataTables_length select {
+  padding: 0px 7.5px;
+}
+
+.staff .dataTables_filter label, .staff .dataTables_length label, .bans .dataTables_filter label, .bans .dataTables_length label, .rules .dataTables_filter label, .rules .dataTables_length label {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0px;
+}
+
+.staff table, .bans table, .rules table {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border-collapse: collapse !important;
+}
+
+.staff thead tr, .bans thead tr, .rules thead tr {
+  border-left: 2px solid #35435b;
+  border-right: 2px solid #35435b;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.staff thead th, .bans thead th, .rules thead th {
+  background-color: #35435b;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(0, 0, 0, 0.4);
+  border-bottom-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.staff tbody tr, .bans tbody tr, .rules tbody tr {
+  border-left: 2px solid #35435b;
+  border-right: 2px solid #35435b;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.staff tbody td, .bans tbody td, .rules tbody td {
+  color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.4);
+  font-family: 'Roboto', sans-serif;
+}
+
+.staff .dataTables_info, .bans .dataTables_info, .rules .dataTables_info {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding-left: 5px !important;
+}
+
+.staff .dataTables_paginate, .bans .dataTables_paginate, .rules .dataTables_paginate {
+  margin: 5px 5px 15px 0px !important;
+}
+
+.staff .dataTables_paginate .paginate_button, .staff .dataTables_paginate .previous, .staff .dataTables_paginate .next, .bans .dataTables_paginate .paginate_button, .bans .dataTables_paginate .previous, .bans .dataTables_paginate .next, .rules .dataTables_paginate .paginate_button, .rules .dataTables_paginate .previous, .rules .dataTables_paginate .next {
+  background-color: rgba(10, 10, 10, 0.7);
+  border-radius: 0px;
+}
+
+.staff .dataTables_paginate .paginate_button a, .staff .dataTables_paginate .previous a, .staff .dataTables_paginate .next a, .bans .dataTables_paginate .paginate_button a, .bans .dataTables_paginate .previous a, .bans .dataTables_paginate .next a, .rules .dataTables_paginate .paginate_button a, .rules .dataTables_paginate .previous a, .rules .dataTables_paginate .next a {
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  background-color: rgba(10, 10, 10, 0.7);
+  border-radius: 0px;
+}
+
+.staff .dataTables_paginate .active, .bans .dataTables_paginate .active, .rules .dataTables_paginate .active {
+  background-color: #35435b;
+}
+
+.staff .dataTables_paginate .active a, .bans .dataTables_paginate .active a, .rules .dataTables_paginate .active a {
+  background-color: #35435b;
+  color: white;
+}
+
+.rules {
+  margin: 80px 0px 20px 0px;
+}
+
+.rules .panel-body {
+  padding: 15px;
+}
+
+.rules .panel-body h4 {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px 0px 10px 0px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.rules .panel-body h5 {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px 0px 10px 0px;
+  text-align: left;
+  color: white;
+}
+
+.rules .panel-body ol, .rules .panel-body ul {
+  margin: 0px 0px 10px 0px;
+  -webkit-padding-start: 40px;
+}
+
+.rules .panel-body ol li, .rules .panel-body ul li {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.rules .panel-body ul {
+  list-style: none;
+}
+
+.rules .panel-body ul li {
+  display: list-item;
+  position: relative;
+}
+
+.rules .panel-body ul li:before {
+  content: "•";
+  color: rgba(255, 255, 255, 0.65);
+  left: -15px;
+  position: absolute;
+}
+
+.rules .panel-body p {
+  font-size: 14px;
+  color: #ff0000;
+  margin: 0px 0px 10px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+/*# sourceMappingURL=style.css.map */

@@ -25,10 +25,19 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/payeer_1169085457.txt"
             ],
             "styles": [
-              "src/styles.scss"
+             
+              "src/assets/css/normalize.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/materialize.min.css",
+              "src/assets/css/datatables.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/app.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -93,6 +102,7 @@
               "src/assets"
             ],
             "styles": [
+            
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +134,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "sport-distour"
 }

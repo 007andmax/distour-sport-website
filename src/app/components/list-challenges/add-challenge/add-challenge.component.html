@@ -1,0 +1,13 @@
+<div class="tamara-head"><h1>Add Challenge</h1></div>
+<app-filters (onChangeType)="onChangeType($event)" (onChangeRank)="onChangeRank($event)"></app-filters>
+
+ 
+
+<ng-template ngFor let-item
+let-i="index"
+            [ngForOf]="subjects"
+            [ngForTrackBy]="trackByIndex">
+<app-add-item-challenge  [index]="i"></app-add-item-challenge>
+</ng-template>
+ 
+ 

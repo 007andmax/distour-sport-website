@@ -1,0 +1,8 @@
+<div class="top-profile">
+    <div class="top-profile-is-login" *ngIf="!user.isAnonimno()"> 
+        <div class="top-profile-avatar"></div>
+        <div class="top-profile-money" [textContent]="user.money"></div>
+        <button (click)="signIn()">Log out</button>
+    </div>
+    <div class="top-profile-no-login" *ngIf="user.isAnonimno()"><button (click)="signIn()">Sign In</button></div>
+</div>

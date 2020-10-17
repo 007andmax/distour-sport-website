@@ -1,0 +1,18 @@
+<app-filters (onChangeType)="onChangeType($event)" (onChangeRank)="onChangeRank($event)"></app-filters>
+
+<div  infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="15"
+[infiniteScrollDisabled]="infiniteScrollDisabled"
+(scrolled)="onScroll()">
+
+<ng-template ngFor let-item
+            [ngForOf]="list"
+            [ngForTrackBy]="trackById">
+<app-item-challenge  [item]="item"></app-item-challenge>
+</ng-template>
+</div>
+<div class="add-container" *ngIf="!user.isAnonimno()">
+    <button routerLink="/challenge/add" >Создать</button>
+    
+</div>

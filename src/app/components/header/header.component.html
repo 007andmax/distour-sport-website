@@ -1,0 +1,43 @@
+<div class="csgo-head">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" routerLink="/"><img src="" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <div class="profile" *ngIf="!user.isAnonimno()">
+                    <img [src]="user.photo" />
+                    <p [textContent]="user.name"></p>
+                    <p [textContent]="user.money"></p>
+                    <button (click)="logOut()">Log out</button>
+                  </div>
+                  <div class="sign-in" *ngIf="user.isAnonimno()">
+                    <button (click)="signIn()">Sign In</button>
+                  </div>
+            </div>
+
+        </nav>
+
+       
+
+    </div>
+</div>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper cyan accent-4" (click)="toggleLeftMenu()">
+            <ul
+                class="left"
+                 
+            >
+                <li style="cursor: pointer;height: 100%;"
+                   
+                >
+                    <a style="padding: 15px;" class="">
+                        <i class="fa fa-bars" ></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

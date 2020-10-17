@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-prod": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -15,12 +16,21 @@
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
+    "@angular/fire": "^6.0.3",
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@ng-bootstrap/ng-bootstrap": "^5.3.1",
+    "angular-imask": "^6.0.5",
+    "firebase": "^7.23.0",
+    "hammerjs": "^2.0.8",
+    "ng-sidebar": "^9.4.2",
+    "ngx-infinite-scroll": "^9.1.0",
+    "ngx-toastr": "^13.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "web-animations-js": "^2.3.2",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

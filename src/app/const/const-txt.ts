@@ -1,0 +1,10 @@
+export const txt_info_participate_in_challenge_success = "Вы были добавлены";
+export const txt_not_exist_money_participate_challenge = "Извините, у вас не достаточно средств что бы учавстовать в челлендже";
+export const txt_service_busy = "Извините сервис не работает. Пожалуйста попробуйте позже.";
+ export const txt_info_add_judge_failed = "Вы не можете учавстовать";
+ export const txt_info_to_big_file = "Видео не загружено, размер должен не привышать 200 MB";
+ export const txt_info_uplaod_success = "Видео было добавлено";
+ export const txt_info_uplaod_failed = "Видео не удалось загрузить, пожалйста попробуйте позже";
+ export const txt_info_set_winner_success = "Пользователь был назначен победителем";
+ export const txt_add_challenge_success = "Челлендж был создан";
+ export const txt_not_exist_money_add_challenge = "Извините, у вас не достаточно средств";

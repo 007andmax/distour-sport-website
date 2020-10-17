@@ -1,0 +1,77 @@
+<div class="tamara-head"><h1>Withdrawal of funds in app Sport Challenges</h1></div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3>Withdrawal of funds VISA</h3>
+            </div>
+            <div class="tamara-body-body servcies-add">
+                <p>Funds will be credited on the 15th of each month</p>
+                <p>Requirements:</p>
+                <ol>
+                    <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
+                    <li>Bot banned</li>
+                    <li>Min summ 5 coints</li>
+                </ol>
+                <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
+                    <h6>Card number</h6>
+                    <input type="text" [(ngModel)]="visaCard"  
+                    />
+
+                </div>
+                <div class="out-money-sport" *ngIf="!user.isAnonimno()">
+                    <h6>Withdraw Amount</h6>
+                    <input 
+                    [imask]="imask" 
+                    [unmask]="true" 
+                    (accept)="onAcceptAmount($event)" 
+                      />
+                   
+                    <button (click)="onInitWithdrawal('VISA')">Transfer</button>
+                </div>
+                <div class="out-money-sport" *ngIf="user.isAnonimno()">
+                    <h6>Please Sign in</h6>
+                   
+                </div>
+                <p *ngIf="showAlertVisa" [textContent]="alertMessage"></p> 
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3>Withdrawal of funds MASTERCARD</h3>
+            </div>
+            <div class="tamara-body-body servcies-add">
+                <p>Funds will be credited on the 15th of each month</p>
+                <p>Requirements:</p>
+                <ol>
+                    <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
+                    <li>Bot banned</li>
+                    <li>Min summ 5 coints</li>
+                </ol>
+                <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
+                    <h6>Card number</h6>
+                    <input type="text" [(ngModel)]="masterCard"  
+                    /> 
+
+                </div>
+                <div class="out-money-sport" *ngIf="!user.isAnonimno()">
+                    <h6>Withdraw Amount</h6>
+                    <input 
+                    [imask]="imask" 
+                    [unmask]="true" 
+                    (accept)="onAcceptAmount($event)" 
+                      />
+                    <button (click)="onInitWithdrawal('MASTERCARD')">Transfer</button>
+                </div>
+                <div class="out-money-sport" *ngIf="user.isAnonimno()">
+                    <h6>Please Sign in</h6>
+                  
+                </div>
+               <p *ngIf="showAlertMasterCard" [textContent]="alertMessage"></p>  
+            </div>
+        </div>
+    </div>
+</div>
