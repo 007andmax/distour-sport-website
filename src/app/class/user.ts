@@ -12,7 +12,19 @@ export class User {
     anonimno: boolean = true;
     constructor(data = null) {
         if (data) {
-            this._id = data._id;
+			
+			this._id = "test_id";
+this.ban = false;
+this.money = 500;
+this.name = "Max";
+this.photo = "url";
+this.email = "max@gmail.com";
+this.rank = "JUNIOR";
+this.current_experience = 0;
+this.required_experience = 100;
+this.role = "USER";
+this.anonimno = false;
+        /*    this._id = data._id;
             this.ban = data.ban;
             this.money = data.money;
             this.name = data.name;
@@ -23,6 +35,7 @@ export class User {
             this.required_experience = data.required_experience;
             this.role = data.role;
             this.anonimno = false;
+			*/
         }
     }
     public isAnonimno () {
