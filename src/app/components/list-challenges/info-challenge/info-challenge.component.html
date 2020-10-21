@@ -5,23 +5,25 @@
             <h3 [textContent]="subjects_workout_junior_challenge_ru[challenge.index]"></h3>
         </div>
         <div class="tamara-body-body servcies-add">
-            <div class="logo">
+          <div class="row"><div class="col-md-2">  <div class="logo">
                 <img src="" width="64" height="64" />
-            </div>
+            </div></div> <div class="col-md-10"> 
             <div class="description">
                 <p [textContent]="requirements_workout_junior_challenge_ru[challenge.index]"></p>
-                <p [textContent]="descriptions_workout_junior_challenge_ru[challenge.index]"></p>
-            </div>
-        <div class="counters">
-            <p [textContent]="'Депозит: ' + challenge.bet"></p>
-            <p [textContent]="'Банк: ' + challenge.bank"></p>
-           
-        </div>
-        <div class="actions">
-              <button *ngIf="checkUser()" (click)="addUser()">Учавствовать</button>
-            <button (click)="showHowDo()">Как делать?</button>
-            <button (click)="showRules()">Правила</button>
-        </div>
+                <p [textContent]="descriptions_workout_junior_challenge_ru[challenge.index]"></p> <br/>
+            </div>   
+        <div class="counters row">
+            <div class="col-md-3">    <p [textContent]="'Депозит: ' + challenge.bet"></p>
+         </div>   <div class="col-md-3">    <p [textContent]="'Банк: ' + challenge.bank"></p>
+         </div> 
+        </div>   <br/>
+        <div class="actions row">
+            <div class="col-md-3">        <button *ngIf="checkUser()" (click)="addUser()">Учавствовать</button> 
+                <button (click)="showHowDo()">Как делать?</button>
+            </div>   <div class="col-md-3">    <button (click)="showRules()">Правила</button>
+            </div>   </div>     </div> 
+   
+</div>  
         </div>
         <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
     </div>
