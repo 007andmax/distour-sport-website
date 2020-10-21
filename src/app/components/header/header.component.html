@@ -1,8 +1,12 @@
 <div class="csgo-head">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" routerLink="/"><img src="" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="line-height: normal!important;">
+            <a class="navbar-brand" routerLink="/"><img src="" /></a> <div class="col"  *ngIf="!user.isAnonimno()">
+              
+                <p>
+<i class="fas fa-coins" style="margin-right: 10px;font-size:20px;"></i>   <span [textContent]="user.money" ></span></p>
+              </div>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -15,10 +19,28 @@
                   <div class="sign-in" *ngIf="user.isAnonimno()">
                     <button (click)="signIn()" class="btn btn-warning">Sign In</button>
                   </div>
+            </div> --> <div class="col text-right"> 
+         
+               
+                  <div class="sign-in" *ngIf="user.isAnonimno()">
+                    <button (click)="signIn()" class="btn btn-warning">Sign In</button>
+                  </div>
+               
+            
+        </div>    <div class="col text-right">
+            <div ngbDropdown placement="bottom-right" class="d-inline-block"  *ngIf="!user.isAnonimno()">
+                <a style="color: #fff;cursor:pointer;" id="dropdownBasic2" ngbDropdownToggle>   <img [src]="user.photo" width="40px" />  </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                <div ngbDropdownItem class="profile">
+          
+                    <p ngbDropdown [textContent]="user.name"></p>
+                
+                    <button ngbDropdown (click)="logOut()" class="btn btn-warning mb-2">Log out</button>  
             </div>
-
+              </div>
+            </div>   </div>
         </nav>
-
+      
        
 
     </div>

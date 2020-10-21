@@ -75,7 +75,7 @@
 
 body {
  background: url("../img/background.jpg") 50% 0/cover no-repeat fixed #222; 
-  background: #273343;
+ 
 }
 
 .services-app h2 {
@@ -111,7 +111,7 @@ body {
   user-select: none;
   color: #fff;
   background-color: #337ab7;
-  border-color: #2e6da4;
+  border-color: #2e6da4;outline: none;
 }
 
 .servcies-add button:hover {
@@ -138,7 +138,7 @@ body {
   font-weight: bold;
   font-size: 45px;
   text-align: center;
-  margin: 0px 0px 50px 0px;
+  margin: 0px 0px 20px 0px;
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -147,6 +147,7 @@ body {
   .tamara .tamara-head h1 {
     font-size: 22px;
   }
+  .navbar-brand{padding-left:30px;}
 }
 
 .tamara .tamara-body {
@@ -286,11 +287,11 @@ body {
   bottom: 0;
   z-index: 999;
   background-color: #1b2838;
-}
+}.picsum-img-wrapper {margin:0 auto;text-align: center;}
 .picsum-img-wrapper img {
   height: 400px;
-  width: 100%;
+  width: auto;
 }.modal .modal-content {
   padding: 0;
-}
+}button.dropdown-item{width:100%;}.dropdown-menu{padding:0;}
 /*# sourceMappingURL=style.css.map */
