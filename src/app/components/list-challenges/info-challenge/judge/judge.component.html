@@ -4,11 +4,12 @@
             <div class="tamara-body-head">
                 <h3 >Судья</h3>
             </div>
-            <div class="tamara-body-body servcies-add text-center">
+            <div class="tamara-body-body servcies-add">
                 <div class="profile-judge" *ngIf="challenge.judge">
-                    <img [src]="challenge.judge.photo" />
-                    <p [textContent]="challenge.judge.name"></p>
-                </div>
+                    <div class="row">
+                        <div class="col-md-2">      <img [src]="challenge.judge.photo" width="100%"  />
+                        </div>   <div class="col-md-10">       <p [textContent]="challenge.judge.name"></p>
+             </div></div>   </div>
                 <p *ngIf="!challenge.judge">Судья не назначен</p>
            
             <div class="actions">

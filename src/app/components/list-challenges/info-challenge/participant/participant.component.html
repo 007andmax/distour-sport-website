@@ -4,13 +4,14 @@
             <div class="tamara-body-head">
                 <h3>Участники</h3>
             </div>
-            <div class="tamara-body-body servcies-add  text-center">
+            <div class="tamara-body-body servcies-add">
 
                 <ng-template ngFor let-item [ngForOf]="challenge.participants" [ngForTrackBy]="trackById">
                     <div class="participant">
-                        <img [src]="item.photo" />
-                        <p [textContent]="item.name"></p>
-
+                        <div class="row">
+                            <div class="col-md-2">       <img [src]="item.photo"  width="100%" />
+                            </div>   <div class="col-md-10">    <p [textContent]="item.name"></p>
+     
                         <div class="actions">
                             <input #fileInput [hidden]="isUploading" *ngIf="checkUploadVideo(item)" type="file" name="image" (change)="uploadVideo($event)" accept="video/mp4,video/x-m4v,video/*" />
                             <button *ngIf="checkJudge()" (click)="setWinner(item)">Сделать победителем</button>
@@ -19,6 +20,8 @@
                             <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
                             <ngb-alert *ngIf="alertWinner.show" [type]="alertWinner.type" (close)="alertWinner.close()">{{ alertWinner.message }}</ngb-alert>
                         </div>
+                    </div>
+                    </div>
                     </div>
                 </ng-template>
             </div>
