@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import {IMaskModule} from 'angular-imask';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +39,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddChallengeComponent } from './components/list-challenges/add-challenge/add-challenge.component';
 import { AddItemChallengeComponent } from './components/list-challenges/add-challenge/add-item-challenge/add-item-challenge.component';
 import { FaqComponent } from './components/faq/faq.component';
-var firebaseConfig = {
+ 
+import { ChallengeSocketService } from './services/socket/challenge-socket.service';
+ 
+ 
+ var firebaseConfig = {
   apiKey: "AIzaSyBqb4yqfaBKrYAYLUdMSvSRJ5JqCTfs7Xo",
     authDomain: "sport-challenges-80bc7.firebaseapp.com",
     databaseURL: "https://sport-challenges-80bc7.firebaseio.com",
@@ -49,6 +53,8 @@ var firebaseConfig = {
     appId: "1:901851542377:web:9c822c1d4e30d525c303f8",
     measurementId: "G-7YD0WP1S3J"
 };
+
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +80,7 @@ var firebaseConfig = {
     AddChallengeComponent,
     AddItemChallengeComponent,
     FaqComponent,
+     
     
   ],
   imports: [
@@ -91,11 +98,14 @@ var firebaseConfig = {
     NgbModule,
     InfiniteScrollModule,
     ToastrModule.forRoot() ,
-    
+   
   ],
   entryComponents:[RulesComponent,
   HowDoComponent],
-  providers: [AuthService, PaymentsService],
+  providers: [
+    AuthService, 
+    PaymentsService,
+    ChallengeSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
