@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { ToastrService } from 'ngx-toastr';
 import { User } from './class/user';
 import { AuthService } from './services/app/auth.service';
 import { UserStateService } from './state/user/user-state.service';
@@ -10,17 +11,23 @@ import { UserStateService } from './state/user/user-state.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  
 })
 export class AppComponent implements OnInit {
     _opened: boolean = false;
   user: User = new User();
   
-  constructor(private authService: AuthService,private userStateService:UserStateService) { }
+  constructor(private authService: AuthService,
+    private toastr: ToastrService,
+    private userStateService:UserStateService) { }
 
    
  
   ngOnInit(): void {
+    this.toastr.success('Hello world!', ' My name is Inigo Montoya. You killed my father. Prepare to die! ',{
+      disableTimeOut :true
+    });
     this.checkUser();
 
     this.userStateService.onUser.subscribe(data => {

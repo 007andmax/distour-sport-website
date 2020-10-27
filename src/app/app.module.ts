@@ -31,7 +31,7 @@ import { RulesComponent } from './components/list-challenges/rules/rules.compone
 import { HowDoComponent } from './components/list-challenges/how-do/how-do.component';
 import { JudgeComponent } from './components/list-challenges/info-challenge/judge/judge.component';
 import { ParticipantComponent } from './components/list-challenges/info-challenge/participant/participant.component';
-import { ToastrModule } from 'ngx-toastr';
+import { Overlay, OverlayContainer, ToastrModule, ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { ShowVideoComponent } from './components/list-challenges/info-challenge/show-video/show-video.component';
 import { SafePipe } from './pipe/safe.pipe';
@@ -41,6 +41,7 @@ import { AddItemChallengeComponent } from './components/list-challenges/add-chal
 import { FaqComponent } from './components/faq/faq.component';
  
 import { ChallengeSocketService } from './services/socket/challenge-socket.service';
+import { OverlayModule } from "@angular/cdk/overlay";
  
  
  var firebaseConfig = {
@@ -96,6 +97,7 @@ import { ChallengeSocketService } from './services/socket/challenge-socket.servi
     FormsModule,
     SidebarModule.forRoot(),
     NgbModule,
+    OverlayModule ,
     InfiniteScrollModule,
     ToastrModule.forRoot() ,
    
@@ -105,7 +107,10 @@ import { ChallengeSocketService } from './services/socket/challenge-socket.servi
   providers: [
     AuthService, 
     PaymentsService,
-    ChallengeSocketService],
+    ChallengeSocketService,
+    ToastrService,
+    Overlay,
+    OverlayContainer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

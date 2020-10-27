@@ -17,6 +17,11 @@
                             <button *ngIf="checkJudge()" (click)="setWinner(item)">Сделать победителем</button>
                             <p><ngb-progressbar *ngIf="isUploading" type="success" [value]="percent" [striped]="true" [animated]="true"><i [textContent]="percent + '%'"></i></ngb-progressbar></p>
                             <p *ngIf="item.video != 'none'" [routerLink]="['video',item.video]">Просмотреть видео</p>
+                            <!-- TEST -->
+                            <ngb-alert   [type]="'success'" (close)="alert.close()">test</ngb-alert>
+                            <ngb-alert  [type]="'danger'" (close)="alert.close()">test</ngb-alert>
+                            <p><ngb-progressbar   type="success" [value]="30" [striped]="true" [animated]="true"><i [textContent]="'40' + '%'"></i></ngb-progressbar></p>
+                            <!-- TEST -->
                             <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
                             <ngb-alert *ngIf="alertWinner.show" [type]="alertWinner.type" (close)="alertWinner.close()">{{ alertWinner.message }}</ngb-alert>
                         </div>
