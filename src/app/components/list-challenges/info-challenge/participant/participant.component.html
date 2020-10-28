@@ -9,10 +9,10 @@
                 <ng-template ngFor let-item [ngForOf]="challenge.participants" [ngForTrackBy]="trackById">
                     <div class="participant">
                         <div class="row">
-                            <div class="col-md-2">       <img [src]="item.photo"  width="100%" />
+                            <div class="col-md-2">       <img [src]="item.photo"   />
                             </div>   <div class="col-md-10">    <p [textContent]="item.name"></p>
      
-                        <div class="actions">
+                        <div class="actions col-md-8">
                             <input #fileInput [hidden]="isUploading" *ngIf="checkUploadVideo(item)" type="file" name="image" (change)="uploadVideo($event)" accept="video/mp4,video/x-m4v,video/*" />
                             <button *ngIf="checkJudge()" (click)="setWinner(item)">Сделать победителем</button>
                             <p><ngb-progressbar *ngIf="isUploading" type="success" [value]="percent" [striped]="true" [animated]="true"><i [textContent]="percent + '%'"></i></ngb-progressbar></p>
@@ -29,6 +29,7 @@
                     </div>
                     </div>
                 </ng-template>
+                
             </div>
         </div>
     </div>

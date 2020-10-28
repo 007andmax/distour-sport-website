@@ -22,12 +22,13 @@
             </div> --> <div class="col text-right"> 
          
                
+                
                   <div class="sign-in" *ngIf="user.isAnonimno()">
                     <button (click)="signIn()" class="btn btn-warning">Sign In</button>
                   </div>
                
             
-        </div>    <div class="col text-right">
+      
             <div ngbDropdown placement="bottom-right" class="d-inline-block"  *ngIf="!user.isAnonimno()">
                 <a style="color: #fff;cursor:pointer;" id="dropdownBasic2" ngbDropdownToggle>   <img [src]="user.photo" width="40px" />  </a>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic2">

@@ -7,7 +7,7 @@
             <div class="tamara-body-body servcies-add">
                 <div class="profile-judge" *ngIf="challenge.judge">
                     <div class="row">
-                        <div class="col-md-2">      <img [src]="challenge.judge.photo" width="100%"  />
+                        <div class="col-md-2">      <img [src]="challenge.judge.photo"    />
                         </div>   <div class="col-md-10">       <p [textContent]="challenge.judge.name"></p>
              </div></div>   </div>
                 <p *ngIf="!challenge.judge">Судья не назначен</p>
@@ -18,5 +18,6 @@
             </div>
             </div>
         </div>
+        
     </div>
     </div>
