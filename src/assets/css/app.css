@@ -295,3 +295,20 @@ body {
   padding: 0;
 }button.dropdown-item{width:100%;}.dropdown-menu{padding:0;}
 /*# sourceMappingURL=style.css.map */
+#toast-container {
+  min-width: 18%;
+  top: 83%;
+  right: 1%;
+}.alert-dismissible .close span {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .38em 1rem;
+  color: inherit;
+  margin-top: -1px;
+  margin-right: -1px;
+}
