@@ -3,8 +3,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="line-height: normal!important;">
             <a class="navbar-brand" routerLink="/"><img src="assets/img/ic_launcher.png" /></a> <div class="col"  *ngIf="!user.isAnonimno()">
               
-                <p>
-<i class="fas fa-coins" style="margin-right: 10px;font-size:20px;"></i>   <span [textContent]="user.money" ></span></p>
+                <p style="margin-bottom: 0;"><img src="assets/img/ic_coin.png"  style="margin-right: 10px;width:20px;" />  <span [textContent]="user.money" ></span></p>
               </div>
             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

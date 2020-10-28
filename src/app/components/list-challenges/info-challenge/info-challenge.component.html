@@ -13,8 +13,8 @@
                 <p [textContent]="descriptions_workout_junior_challenge_ru[challenge.index]"></p> <br/>
             </div>   
         <div class="counters row">
-            <div class="col-md-3">    <p [textContent]="'Депозит: ' + challenge.bet"></p>
-         </div>   <div class="col-md-3">    <p [textContent]="'Банк: ' + challenge.bank"></p>
+            <div class="col-md-3">    <p><span  [textContent]="'Депозит: ' + challenge.bet"> </span> <img src="assets/img/ic_coin.png"  style="margin-left: 10px;width:14px;" /></p>
+         </div>   <div class="col-md-3">      <p><span   [textContent]="'Банк: ' + challenge.bank"> </span> <img src="assets/img/ic_coin.png"  style="margin-left: 10px;width:14px;" /></p>
          </div> 
         </div>   <br/>
         <div class="actions row"> <div class="col-md-3 col-sm-6 col-6" *ngIf="checkUser()">  <button  (click)="addUser()">Учавствовать</button> </div>
