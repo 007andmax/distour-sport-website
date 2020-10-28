@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
  
 import { map } from 'rxjs/operators';
 import { User } from 'src/app/class/user';
+import { ChallengeItemUser } from 'src/app/interfaces/socket-challenge-item-user';
 import { ChallengeService } from 'src/app/services/challenge/challenge.service';
 import { ChallengeSocketService } from 'src/app/services/socket/challenge-socket.service';
 import { UserStateService } from 'src/app/state/user/user-state.service';
 import { FilterChallenge } from './class/filter-challenge';
 import { ItemListChallenge } from './class/item-list-challenge';
+import { ParticipantChallenge } from './class/participant-challenge';
 
 @Component({
   selector: 'app-list-challenges',
@@ -33,6 +35,12 @@ export class ListChallengesComponent implements OnInit {
     this.challengeSocketService.add_challenge.subscribe(data => {
       console.log("data",data);
       if (this.filter.type == data.type && this.filter.rank == data.rank) this.list.unshift(data);
+    })
+    this.challengeSocketService.add_user.subscribe((data: ChallengeItemUser) => {
+      let findIndex = this.list.findIndex(item => item._id == data.challenge_id);
+      if (findIndex > -1)  this.list[findIndex].participants.push(new ParticipantChallenge({
+        ...data, rating: -1, video: "none", winner: false
+      }))
     })
   }
  

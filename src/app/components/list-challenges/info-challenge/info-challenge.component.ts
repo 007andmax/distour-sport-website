@@ -4,10 +4,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/class/user';
 import { subjects_workout_junior_challenge_ru, descriptions_workout_junior_challenge_ru, requirements_workout_junior_challenge_ru, TYPE_WORKOUT, photos_workout_junior_1, photos_workout_junior_2, photos_workout_junior_3, photos_workout_junior_4, photos_workout_junior_5, photos_workout_junior_6, photos_workout_junior_7, photos_workout_junior_8, photos_workout_junior_9, photos_workout_junior_10, TYPE_FREE, RANK_JUNIOR, ROLE_JUDGE } from 'src/app/const/const';
 import { txt_info_add_judge_failed, txt_info_participate_in_challenge_success, txt_not_exist_money_participate_challenge, txt_service_busy } from 'src/app/const/const-txt';
+import { ChallengeItemUser } from 'src/app/interfaces/socket-challenge-item-user';
 import { ChallengeService } from 'src/app/services/challenge/challenge.service';
+import { ChallengeSocketService } from 'src/app/services/socket/challenge-socket.service';
 import { UserStateService } from 'src/app/state/user/user-state.service';
 import { Alert } from '../class/alert';
 import { InfoChallenge } from '../class/info-challenge';
+import { ParticipantChallenge } from '../class/participant-challenge';
 import { HowDoComponent } from '../how-do/how-do.component';
 import { RulesComponent } from '../rules/rules.component';
 
@@ -28,6 +31,7 @@ export class InfoChallengeComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,
     private userStateService: UserStateService,
     private modalService: NgbModal,
+    private challengeSocketService: ChallengeSocketService,
     private challengeService: ChallengeService) {
 
 
@@ -43,6 +47,17 @@ export class InfoChallengeComponent implements OnInit {
       this.challenge = data;
       console.log("challenge", this.challenge);
       this.showPreloader = false;
+    })
+    this.challengeSocketService.upload_video.subscribe(data => {
+      if (data.challenge_id == this.challenge._id) {
+        let index = this.challenge.participants.findIndex(item => item._id == data.user_id);
+        if (index > -1) this.challenge.participants[index].video = data.video;
+      }
+    })
+    this.challengeSocketService.add_user.subscribe((data: ChallengeItemUser) => {
+      if (data.challenge_id == this.challenge._id) this.challenge.participants.push(new ParticipantChallenge({
+        ...data, rating: -1, video: "none", winner: false
+      }))
     })
 
   }

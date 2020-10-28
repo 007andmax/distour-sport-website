@@ -11,8 +11,8 @@ export class User {
     role: string;
     anonimno: boolean = true;
     constructor(data = null) {
-        if (data) {
-           /* this.ban = false;
+      //  if (data) {
+            this.ban = false;
 
             this.current_experience = 0;
             this.email = "distourandmax@gmail.com";
@@ -23,8 +23,8 @@ export class User {
             this.required_experience = 100;
             this.role = "USER";
             this._id = "5f626bc9cd3e3f46b51e51e2";
-            this.anonimno = false;*/
-               this._id = data._id;
+            this.anonimno = false;
+              /* this._id = data._id;
                 this.ban = data.ban;
                 this.money = data.money;
                 this.name = data.name;
@@ -34,9 +34,9 @@ export class User {
                 this.current_experience = data.current_experience;
                 this.required_experience = data.required_experience;
                 this.role = data.role;
-                this.anonimno = false;
+                this.anonimno = false;*/
                 
-        }
+      //  }
     }
     public isAnonimno() {
         return this.anonimno;
