@@ -12,15 +12,15 @@
                     <p [textContent]="requirements_workout_junior_challenge_ru[index]"></p>
                     <p [textContent]="descriptions_workout_junior_challenge_ru[index]"></p><br/>
                 </div>
-                <div class="counters row"><div class="col-4">
+                <div class="counters row"><div class="col-md-4 col-6 mb-3">
                 <p [textContent]="'Депозит: ' + '0.25'"></p>
-            </div>  <div class="col-4">     <p [textContent]="'Ранг: ' + getRankText()"></p>
+            </div>  <div class="col-md-4 col-6">     <p [textContent]="'Ранг: ' + getRankText()"></p>
             </div> 
             </div>
-            <div class="actions row"><div class="col-4"> 
+            <div class="actions row"> <div class="col-md-4 col-6">  
                    
                 <button (click)="showHowDo()">Как делать?</button>
-            </div>  <div class="col-4">      <button *ngIf="checkCreate()" (click)="create()">Создать</button>
+            </div>  <div class="col-md-4 col-6">       <button *ngIf="checkCreate()" (click)="create()">Создать</button>
             </div> </div>
             <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
             </div>

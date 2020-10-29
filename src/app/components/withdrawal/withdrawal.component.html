@@ -16,7 +16,7 @@
                 </ol>
                 <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
                     <h6>Card number</h6>
-                    <input type="text" [(ngModel)]="visaCard"  
+                    <input type="text" [(ngModel)]="visaCard"   class="form-control"
                     />
 
                 </div>
@@ -25,7 +25,7 @@
                     <input 
                     [imask]="imask" 
                     [unmask]="true" 
-                    (accept)="onAcceptAmount($event)" 
+                    (accept)="onAcceptAmount($event)" class="form-control"
                       />
                    
                     <button (click)="onInitWithdrawal('VISA')">Transfer</button>
