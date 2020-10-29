@@ -25,9 +25,9 @@ export class AppComponent implements OnInit {
    
  
   ngOnInit(): void {
-    this.toastr.success('Hello world!', ' My name is Inigo Montoya. You killed my father. Prepare to die! ',{
+   /* this.toastr.success('Hello world!', ' My name is Inigo Montoya. You killed my father. Prepare to die! ',{
       disableTimeOut :true
-    });
+    });*/
     this.checkUser();
 
     this.userStateService.onUser.subscribe(data => {
