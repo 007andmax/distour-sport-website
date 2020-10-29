@@ -148,8 +148,22 @@ body {
     font-size: 22px;
   }
   .navbar-brand{padding-left:30px;}
+  .tamara .tamara-body { 
+    margin-bottom: 15px;
+  }
+  .row{margin-bottom:0;}.container { 
+    width: 98%;
+}.csgo-head .container { 
+  width: 90%;
+}.tamara { 
+  margin: 60px 0px 0px 0px;
 }
-
+}
+.tamara .tamara-body .d-inline-block.dropdown {
+  margin-right: 15px;
+}.logo {
+  margin-bottom: 10px;
+}
 .tamara .tamara-body {
   display: block;
   width: 100%;
@@ -327,3 +341,6 @@ body {
   outline: none;
 }
 ::-webkit-file-upload-button:hover {    background-color: #2d72ad;}
+.modal-header .close {
+  color: #fff;
+  font-size: 24px;}
