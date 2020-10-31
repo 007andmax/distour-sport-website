@@ -5,20 +5,20 @@
                 <h3 [textContent]="subjects_workout_junior_challenge_ru[index]"></h3>
             </div>
             <div class="tamara-body-body servcies-add">
-                <div class="row"><div class="col-md-2">   <div class="logo">
+                <div class="row"><div class="col-md-2 col-3">   <div class="logo">
                     <img src="assets/img/workout.png" width="64" height="64" *ngIf="type === TYPE_WORKOUT" />
-                </div></div> <div class="col-md-10">
+                </div></div> <div class="col-md-10 col-9">
                 <div class="description">
                     <p [textContent]="descriptions_workout_junior_challenge_ru[index]"></p>
                     <p [innerHTML]="requirements_workout_junior_challenge_ru[index]"></p><br/>
                    
-                </div>
-                <div class="counters row"><div class="col-md-4 col-6 mb-3">
+                </div></div> </div>
+                <div class="counters row"><div class="col-md-2"></div> <div class="col-md-4 col-6 mb-3">
                 <p [textContent]="'Депозит: ' + '0.25'"></p>
             </div>  <div class="col-md-4 col-6">     <p [textContent]="'Ранг: ' + getRankText()"></p>
             </div> 
             </div>
-            <div class="actions row"> <div class="col-md-4 col-6">  
+            <div class="actions row"> <div class="col-md-2"></div><div class="col-md-4 col-6">  
                    
                 <button (click)="showHowDo()">Как делать?</button>
             </div>  <div class="col-md-4 col-6">       <button *ngIf="checkCreate()" (click)="create()">Создать</button>

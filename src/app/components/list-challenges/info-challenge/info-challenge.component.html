@@ -5,26 +5,26 @@
             <h3 [textContent]="subjects_workout_junior_challenge_ru[challenge.index]"></h3>
         </div>
         <div class="tamara-body-body servcies-add">
-          <div class="row"><div class="col-md-2">  <div class="logo">
+          <div class="row"><div class="col-md-2 col-3">  <div class="logo">
             <img src="assets/img/workout.png" width="64" height="64" *ngIf="challenge.type === TYPE_WORKOUT" />
-            </div></div> <div class="col-md-10"> 
+            </div></div> <div class="col-md-10 col-9"> 
             <div class="description">
                 <p [textContent]="descriptions_workout_junior_challenge_ru[challenge.index]"></p>
                 <p [innerHTML]="requirements_workout_junior_challenge_ru[challenge.index]"></p> <br/>
                 
-            </div>   
-        <div class="counters row">
+            </div>   </div> 
+   
+        </div>  
+        <div class="counters row"><div class="col-md-2"></div>
             <div class="col-md-3 col-6">    <p><span  [textContent]="'Депозит: ' + challenge.bet"> </span> <img src="assets/img/ic_coin.png"  style="margin-left: 10px;width:14px;" /></p>
          </div>   <div class="col-md-3  col-6">      <p><span   [textContent]="'Банк: ' + challenge.bank"> </span> <img src="assets/img/ic_coin.png"  style="margin-left: 10px;width:14px;" /></p>
          </div> 
         </div>   <br/>
-        <div class="actions row"> <div class="col-md-3 col-sm-6 col-6 mb-4" *ngIf="checkUser()">  <button style="width: 119px;" (click)="addUser()">Учавствовать</button> </div>
+        <div class="actions row"> <div class="col-md-2"></div><div class="col-md-3 col-sm-6 col-6 mb-4" *ngIf="checkUser()">  <button style="width: 119px;" (click)="addUser()">Учавствовать</button> </div>
             <div class="col-md-3 col-sm-6 col-6">      
                 <button  style="width: 119px;"  (click)="showHowDo()">Как делать?</button>
             </div>   <div class="col-md-3 col-sm-6 col-6">    <button  style="width: 119px;" (click)="showRules()">Правила</button>
-            </div>   </div>     </div> 
-   
-</div>  
+            </div>   </div>     
         </div>
         <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
     </div>
