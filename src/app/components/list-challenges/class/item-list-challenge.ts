@@ -6,6 +6,7 @@ export class ItemListChallenge {
     bet: number;
     bank: number;
     rank: string; //Junior, Middle, Senior 
+    type: string;
     participants: Array<ParticipantChallenge> = [];
     constructor(data) {
         this._id = data._id;
@@ -13,6 +14,7 @@ export class ItemListChallenge {
         this.bet = data.bet;
         this.bank = data.bank;
         this.rank = data.rank;
+        this.type = data.type;
         this.participants = data.participants.map(item => {
             return new ParticipantChallenge(item);
         });

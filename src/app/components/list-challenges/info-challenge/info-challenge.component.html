@@ -6,11 +6,12 @@
         </div>
         <div class="tamara-body-body servcies-add">
           <div class="row"><div class="col-md-2">  <div class="logo">
-                <img src="" width="64" height="64" />
+            <img src="assets/img/workout.png" width="64" height="64" *ngIf="challenge.type === TYPE_WORKOUT" />
             </div></div> <div class="col-md-10"> 
             <div class="description">
-                <p [textContent]="requirements_workout_junior_challenge_ru[challenge.index]"></p>
-                <p [textContent]="descriptions_workout_junior_challenge_ru[challenge.index]"></p> <br/>
+                <p [textContent]="descriptions_workout_junior_challenge_ru[challenge.index]"></p>
+                <p [innerHTML]="requirements_workout_junior_challenge_ru[challenge.index]"></p> <br/>
+                
             </div>   
         <div class="counters row">
             <div class="col-md-3 col-6">    <p><span  [textContent]="'Депозит: ' + challenge.bet"> </span> <img src="assets/img/ic_coin.png"  style="margin-left: 10px;width:14px;" /></p>

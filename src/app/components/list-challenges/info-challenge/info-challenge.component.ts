@@ -24,6 +24,7 @@ export class InfoChallengeComponent implements OnInit {
   user: User = new User();
   challenge: InfoChallenge;
   showPreloader: boolean = true;
+  TYPE_WORKOUT:string = TYPE_WORKOUT;
   subjects_workout_junior_challenge_ru: Array<string> = subjects_workout_junior_challenge_ru;
   descriptions_workout_junior_challenge_ru: Array<string> = descriptions_workout_junior_challenge_ru;
   requirements_workout_junior_challenge_ru: Array<string> = requirements_workout_junior_challenge_ru;

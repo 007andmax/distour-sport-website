@@ -20,6 +20,7 @@ export class AddItemChallengeComponent implements OnInit {
   @Input() type = TYPE_WORKOUT;
   @Input() rank = RANK_JUNIOR;
   @Input() bet = 0.25;
+  TYPE_WORKOUT:string = TYPE_WORKOUT;
   subjects_workout_junior_challenge_ru: Array<string> = subjects_workout_junior_challenge_ru;
   descriptions_workout_junior_challenge_ru: Array<string> = descriptions_workout_junior_challenge_ru;
   requirements_workout_junior_challenge_ru: Array<string> = requirements_workout_junior_challenge_ru;
