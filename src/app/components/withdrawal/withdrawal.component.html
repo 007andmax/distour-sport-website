@@ -10,22 +10,23 @@
                 <p>Funds will be credited on the 15th of each month</p>
                 <p>Requirements:</p>
                 <ol>
+                
                     <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
                     <li>Bot banned</li>
                     <li>Min summ 5 coints</li>
                 </ol>
                 <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
-                    <h6>Card number</h6>
-                    <input type="text" [(ngModel)]="visaCard"   class="form-control"
+                   <h6 >Card number</h6>
+                    <input type="text" [(ngModel)]="visaCard"  
                     />
 
                 </div>
                 <div class="out-money-sport" *ngIf="!user.isAnonimno()">
-                    <h6>Withdraw Amount</h6>
+                    <h6  >Withdraw Amount</h6>
                     <input 
                     [imask]="imask" 
                     [unmask]="true" 
-                    (accept)="onAcceptAmount($event)" class="form-control"
+                    (accept)="onAcceptAmount($event)" 
                       />
                    
                     <button (click)="onInitWithdrawal('VISA')">Transfer</button>
