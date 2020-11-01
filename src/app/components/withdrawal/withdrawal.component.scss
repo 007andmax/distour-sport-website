@@ -50,6 +50,18 @@
   }@media only screen and (max-width: 900px) {.out-money-sport button {
     margin-top: 10px!important;
 } }
+.out-money-sport-card {
+  .d-inline-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: auto !important;
+    button {
+      text-transform: capitalize;
+    }
+  }
+  
+}
 
 @media only screen and (max-width: 768px) {.out-money-sport button {
     margin-top: 0px!important;

@@ -311,7 +311,7 @@ body {
 /*# sourceMappingURL=style.css.map */
 #toast-container {
   min-width: 18%;
-  top: 83%;
+  top: 70px;
   right: 1%;
 }.alert-dismissible .close span {
   font-size: 24px;

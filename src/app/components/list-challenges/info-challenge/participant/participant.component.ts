@@ -31,6 +31,7 @@ export class ParticipantComponent implements OnInit {
     console.log("fileInput", this.fileInput);
   }
   checkUploadVideo(participant) {
+    if (this.challenge.cancel) return false;
     if (this.user.isAnonimno()) return false;
     if (participant.video != "none") return false;
     if (participant._id != this.user._id) return false;
@@ -68,6 +69,7 @@ export class ParticipantComponent implements OnInit {
   }
 
   checkJudge() {
+    if (this.challenge.cancel) return false;
     if (this.user.isAnonimno()) return false;
     if (this.user.role != ROLE_JUDGE && this.user.role != ROLE_ADMIN) return false;
     if (!this.challenge.judge) return false;

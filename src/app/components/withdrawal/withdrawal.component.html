@@ -1,13 +1,26 @@
-<div class="tamara-head"><br/><h1>Withdrawal of funds in app Sport Challenges</h1></div>
+<div class="tamara-head"><br/><h1>Вывод средств</h1>
+<!--<h1>Withdrawal of funds in app Sport Challenges</h1>--></div>
 
 <div class="row">
     <div class="col-md-6">
         <div class="tamara-body">
             <div class="tamara-body-head">
-                <h3>Withdrawal of funds VISA</h3>
+                <h3>Вывод на карту VISA</h3>
+                <!--  <h3>Withdrawal of funds VISA</h3>-->
             </div>
             <div class="tamara-body-body servcies-add">
-                <p>Funds will be credited on the 15th of each month</p>
+                <p>Средства будут зачисляться 15 числа каждого месяца.</p>
+                <p>Требования:</p>
+                <ol>
+                
+                    <li>Авторизоваться</li>
+                    <li>Быть не забаненным</li>
+                    <li>Мин сумма 5 монет</li>
+                </ol>
+
+                <!--
+
+                      <p>Funds will be credited on the 15th of each month</p>
                 <p>Requirements:</p>
                 <ol>
                 
@@ -15,25 +28,44 @@
                     <li>Bot banned</li>
                     <li>Min summ 5 coints</li>
                 </ol>
+                -->
                 <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
-                   <h6 >Card number</h6>
+                    <h6 >Страна</h6>
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownType" ngbDropdownToggle>Выбрать Страну</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownType">
+                           
+                            <button ngbDropdownItem   (click)="selectCountry('RUSSIAN')">Россия</button>
+                            <button ngbDropdownItem   (click)="selectCountry('OTHER')">Другая</button>
+                           
+                        </div>
+                      </div>
+                    <!-- <h6 >Card number</h6>-->
+                    
+ 
+                 </div>
+                <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
+                   <h6 >Номер карты</h6>
+                   <!-- <h6 >Card number</h6>-->
                     <input type="text" [(ngModel)]="visaCard"  
                     />
 
                 </div>
                 <div class="out-money-sport" *ngIf="!user.isAnonimno()">
-                    <h6  >Withdraw Amount</h6>
+                    <h6  >Колличество</h6>
+                    <!-- <h6  >Withdraw Amount</h6>-->
                     <input 
                     [imask]="imask" 
                     [unmask]="true" 
                     (accept)="onAcceptAmount($event)" 
                       />
                    
-                    <button (click)="onInitWithdrawal('VISA')">Transfer</button>
+                    <button (click)="onInitWithdrawal('VISA')">Вывести</button>
+                    <!-- <button (click)="onInitWithdrawal('VISA')">Transfer</button>-->
                 </div>
                 <div class="out-money-sport" *ngIf="user.isAnonimno()">
-                    <h6>Please Sign in</h6>
-                   
+                  <!-- <h6>Please Sign in</h6>--> 
+                  <h6>Пожалуйста Авторизируйтесь</h6>
                 </div>
                 <p *ngIf="showAlertVisa" [textContent]="alertMessage"></p> 
             </div>
@@ -42,33 +74,50 @@
     <div class="col-md-6">
         <div class="tamara-body">
             <div class="tamara-body-head">
-                <h3>Withdrawal of funds MASTERCARD</h3>
+               <!--<h3>Withdrawal of funds MASTERCARD</h3>--> 
+               <h3>Вывод на карту MASTERCARD</h3>
             </div>
             <div class="tamara-body-body servcies-add">
-                <p>Funds will be credited on the 15th of each month</p>
-                <p>Requirements:</p>
+                <p>Средства будут зачисляться 15 числа каждого месяца.</p>
+                <p>Требования:</p>
                 <ol>
-                    <li>Sign up in <a href="https://play.google.com/store/apps/details?id=com.distour.distoursport_v2" target="_blank">app</a></li>
-                    <li>Bot banned</li>
-                    <li>Min summ 5 coints</li>
+                
+                    <li>Авторизоваться</li>
+                    <li>Быть не забаненным</li>
+                    <li>Мин сумма 5 монет</li>
                 </ol>
                 <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
-                    <h6>Card number</h6>
+                    <h6 >Страна</h6>
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownType" ngbDropdownToggle>Выбрать Страну</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownType">
+                           
+                            <button ngbDropdownItem   (click)="selectCountry('RUSSIAN')">Россия</button>
+                            <button ngbDropdownItem   (click)="selectCountry('OTHER')">Другая</button>
+                           
+                        </div>
+                      </div>
+                    <!-- <h6 >Card number</h6>-->
+                    
+ 
+                 </div>
+                <div class="out-money-sport-card" *ngIf="!user.isAnonimno()">
+                    <h6 >Номер карты</h6>
                     <input type="text" [(ngModel)]="masterCard"  
                     /> 
 
                 </div>
-                <div class="out-money-sport" > <!--*ngIf="!user.isAnonimno()"-->
-                    <h6>Withdraw Amount</h6>
+                <div class="out-money-sport" *ngIf="!user.isAnonimno()">  
+                    <h6  >Колличество</h6>
                     <input 
                     [imask]="imask" 
                     [unmask]="true" 
                     (accept)="onAcceptAmount($event)" 
                       />
-                    <button (click)="onInitWithdrawal('MASTERCARD')">Transfer</button>
+                    <button (click)="onInitWithdrawal('MASTERCARD')">Вывести</button>
                 </div>
                 <div class="out-money-sport" *ngIf="user.isAnonimno()">
-                    <h6>Please Sign in</h6>
+                    <h6>Пожалуйста Авторизируйтесь</h6>
                   
                 </div>
                <p *ngIf="showAlertMasterCard" [textContent]="alertMessage"></p>  

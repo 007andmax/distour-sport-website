@@ -32,7 +32,7 @@ export class AddItemChallengeComponent implements OnInit {
   ngOnInit() {
     this.user = this.userStateService.getUser();
     this.userStateService.onUser.subscribe(data => {
-      this.user = new User(data);
+      this.user = data;
     })
     console.log("index", this.index);
   }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import * as firebase from 'firebase';
 import { User } from 'src/app/class/user';
 import { UserService } from 'src/app/services/user/user.service';
 import { UserStateService } from 'src/app/state/user/user-state.service';
@@ -16,9 +17,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userStateService.getUser();
-    console.log("this.user",this.user);
     this.userStateService.onUser.subscribe(data => {
-      this.user = new User(data);
+      this.user = data;
     })
   }
   signIn() {
@@ -26,7 +26,12 @@ export class HeaderComponent implements OnInit {
   }
   logOut() {
     this.userService.logOut().subscribe(data => {
-      window.location.href = "/";
+      firebase.auth().signOut().then(function() {
+        window.location.href = "/";
+      }).catch(function(error) {
+        window.location.href = "/";
+      });
+    
     })
   }
   toggleLeftMenu() {

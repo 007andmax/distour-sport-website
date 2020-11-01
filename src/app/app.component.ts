@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { ToastrService } from 'ngx-toastr';
 import { User } from './class/user';
+import { UserNotification } from './interfaces/socket-user-notification';
 import { AuthService } from './services/app/auth.service';
+import { UserSocketService } from './services/socket/user-socket.service';
 import { UserStateService } from './state/user/user-state.service';
- 
+
 
 
 
@@ -12,31 +14,37 @@ import { UserStateService } from './state/user/user-state.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  
+
 })
 export class AppComponent implements OnInit {
-    _opened: boolean = false;
+  _opened: boolean = false;
   user: User = new User();
-  
+
   constructor(private authService: AuthService,
     private toastr: ToastrService,
-    private userStateService:UserStateService) { }
+    private userSocketService: UserSocketService,
+    private userStateService: UserStateService) { }
 
-   
- 
+
+
   ngOnInit(): void {
-   /* this.toastr.success('Hello world!', ' My name is Inigo Montoya. You killed my father. Prepare to die! ',{
-      disableTimeOut :true
-    });*/
+   
     this.checkUser();
 
     this.userStateService.onUser.subscribe(data => {
-      this.user = new User(data);
+      this.user = data;
+
     })
     this.userStateService.onSignIn.subscribe(data => {
       this.signIn();
     })
-
+    this.userSocketService.money_change.subscribe(data => {
+      this.user.money = Number(data);
+      this.userStateService.setUserData(this.user);
+    })
+    this.userSocketService.notification.subscribe((data:UserNotification) => {
+      this.toastr.info(data.message, data.title);
+    });
   }
   public signIn() {
     this.authService.doGoogleLogin().then(data => {
@@ -59,6 +67,7 @@ export class AppComponent implements OnInit {
     this.authService.checkUser().subscribe(data => {
       console.log('data', data);
       this.userStateService.setUserData(new User(data));
+      this.userSocketService.onInit(new User(data));
     }, err => {
 
     })
@@ -66,5 +75,5 @@ export class AppComponent implements OnInit {
   toggleLeftMenu() {
     this._opened = !this._opened;
   }
-   
+
 }

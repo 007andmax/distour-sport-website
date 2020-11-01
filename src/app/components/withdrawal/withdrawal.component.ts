@@ -26,12 +26,15 @@ export class WithdrawalComponent implements OnInit {
     private userStateService:UserStateService) { }
 
   ngOnInit() {
+    this.user = this.userStateService.getUser();
     this.userStateService.onUser.subscribe(data => {
-      this.user = new User(data);
+      this.user = data;
     })
 
   }
-  
+  publicselectCountry(country) {
+
+  }
  public onInitWithdrawal(type) {
 
  }

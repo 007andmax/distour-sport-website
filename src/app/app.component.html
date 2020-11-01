@@ -5,8 +5,8 @@
    <div class="left-menu-body">
    <div class="menu-list">
     <p routerLink="/faq" (click)="_opened = false">FAQ</p>
-    <p routerLink="/profile" (click)="_opened = false">Профиль</p>
-     <p routerLink="/services" (click)="_opened = false">Services</p>
+    <p routerLink="/profile" *ngIf="!user.isAnonimno()" (click)="_opened = false">Профиль</p>
+     <p routerLink="/services" (click)="_opened = false">Услуги</p>
    </div>
    </div>
   </ng-sidebar>

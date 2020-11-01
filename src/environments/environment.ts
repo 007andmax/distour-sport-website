@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://sport.distour.com/'
+  apiUrl: 'http://sport.distour.com/',
+  apiSocket: 'http://81.30.156.22:1235/'
 };
 
 /*

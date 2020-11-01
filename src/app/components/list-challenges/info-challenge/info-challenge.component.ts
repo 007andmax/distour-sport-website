@@ -4,12 +4,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/class/user';
 import { subjects_workout_junior_challenge_ru, descriptions_workout_junior_challenge_ru, requirements_workout_junior_challenge_ru, TYPE_WORKOUT, photos_workout_junior_1, photos_workout_junior_2, photos_workout_junior_3, photos_workout_junior_4, photos_workout_junior_5, photos_workout_junior_6, photos_workout_junior_7, photos_workout_junior_8, photos_workout_junior_9, photos_workout_junior_10, TYPE_FREE, RANK_JUNIOR, ROLE_JUDGE } from 'src/app/const/const';
 import { txt_info_add_judge_failed, txt_info_participate_in_challenge_success, txt_not_exist_money_participate_challenge, txt_service_busy } from 'src/app/const/const-txt';
+import { ChallengeItemFinish } from 'src/app/interfaces/socket-challenge-item-finish';
+import { ChallengeItemJudge } from 'src/app/interfaces/socket-challenge-item-judge';
 import { ChallengeItemUser } from 'src/app/interfaces/socket-challenge-item-user';
 import { ChallengeService } from 'src/app/services/challenge/challenge.service';
 import { ChallengeSocketService } from 'src/app/services/socket/challenge-socket.service';
 import { UserStateService } from 'src/app/state/user/user-state.service';
 import { Alert } from '../class/alert';
 import { InfoChallenge } from '../class/info-challenge';
+import { Judge } from '../class/judge';
 import { ParticipantChallenge } from '../class/participant-challenge';
 import { HowDoComponent } from '../how-do/how-do.component';
 import { RulesComponent } from '../rules/rules.component';
@@ -25,6 +28,7 @@ export class InfoChallengeComponent implements OnInit {
   challenge: InfoChallenge;
   showPreloader: boolean = true;
   TYPE_WORKOUT:string = TYPE_WORKOUT;
+  TYPE_FREE:string = TYPE_FREE;
   subjects_workout_junior_challenge_ru: Array<string> = subjects_workout_junior_challenge_ru;
   descriptions_workout_junior_challenge_ru: Array<string> = descriptions_workout_junior_challenge_ru;
   requirements_workout_junior_challenge_ru: Array<string> = requirements_workout_junior_challenge_ru;
@@ -41,7 +45,7 @@ export class InfoChallengeComponent implements OnInit {
   ngOnInit() {
     this.user = this.userStateService.getUser();
     this.userStateService.onUser.subscribe(data => {
-      this.user = new User(data);
+      this.user = data;
     })
     let id = this.activateRoute.snapshot.params['id'];
     this.challengeService.getChallenge(id).subscribe(data => {
@@ -50,6 +54,7 @@ export class InfoChallengeComponent implements OnInit {
       this.showPreloader = false;
     })
     this.challengeSocketService.upload_video.subscribe(data => {
+      console.log("data",data);
       if (data.challenge_id == this.challenge._id) {
         let index = this.challenge.participants.findIndex(item => item._id == data.user_id);
         if (index > -1) this.challenge.participants[index].video = data.video;
@@ -61,8 +66,23 @@ export class InfoChallengeComponent implements OnInit {
       }))
     })
 
+    this.challengeSocketService.add_judge.subscribe((data:ChallengeItemJudge) => {
+      console.log("data",data);
+      if (data.challenge_id == this.challenge._id) this.challenge.judge = new Judge(data);
+    })
+    this.challengeSocketService.finish_challenge.subscribe((data:ChallengeItemFinish) => {
+      console.log("data",data);
+      if (data.challenge_id == this.challenge._id) {
+        let index = this.challenge.participants.findIndex(item => item._id == data.user_id);
+        if (index > -1) {
+          this.challenge.cancel = true;
+          this.challenge.participants[index].winner = true;
+        }
+      }
+    })
   }
   checkUser() {
+    if (this.challenge.cancel) return false;
     if (this.user.isAnonimno()) return false;
     if (this.challenge.participants.find(item => item._id == this.user._id)) return false;
     if (this.challenge.rank != this.user.rank) return false;
