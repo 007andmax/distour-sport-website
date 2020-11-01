@@ -32,7 +32,7 @@ export class WithdrawalComponent implements OnInit {
     })
 
   }
-  publicselectCountry(country) {
+  public selectCountry(country) {
 
   }
  public onInitWithdrawal(type) {
