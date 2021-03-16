@@ -7,6 +7,7 @@
     <p routerLink="/faq" (click)="_opened = false">FAQ</p>
     <p routerLink="/profile" *ngIf="!user.isAnonimno()" (click)="_opened = false">Профиль</p>
      <p routerLink="/services" (click)="_opened = false">Услуги</p>
+       <p routerLink="/support" *ngIf="!user.isAnonimno()" (click)="_opened = false" [textContent]="getSupportText()"></p>
    </div>
    </div>
   </ng-sidebar>

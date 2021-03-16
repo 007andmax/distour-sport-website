@@ -24,7 +24,7 @@
                 <button (click)="showHowDo()">Как делать?</button>
             </div>  <div class="col-md-4 col-6">       <button *ngIf="checkCreate()" (click)="create()">Создать</button>
             </div> </div>
-            <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
+            <ngb-alert class="alert-message" *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
             </div>
             
         </div>

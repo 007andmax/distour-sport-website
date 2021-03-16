@@ -1,33 +1,17 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="tamara-body">
-            <div class="tamara-body-head">
-                <h3>Участники</h3>
-            </div>
-            <div class="tamara-body-body servcies-add">
+<div class="participant">
+    <div class="row">
+        <div class="col-md-2 col-4">       <img [src]="participant.photo"   />
+        </div>   <div class="col-md-10 col-8">    <p [textContent]="participant.name"></p>
 
-
-                <ng-template ngFor let-item [ngForOf]="challenge.participants" [ngForTrackBy]="trackById">
-                    <div class="participant">
-                        <div class="row">
-                            <div class="col-md-2 col-4">       <img [src]="item.photo"   />
-                            </div>   <div class="col-md-10 col-8">    <p [textContent]="item.name"></p>
-     
-                        <div class="actions col-md-8 col-12" style="padding:0;">
-                            <input #fileInput [hidden]="isUploading" *ngIf="checkUploadVideo(item)" type="file" name="image" (change)="uploadVideo($event)" accept="video/mp4,video/x-m4v,video/*" />
-                            <button *ngIf="checkJudge()" (click)="setWinner(item)">Сделать победителем</button>
-                            <p><ngb-progressbar *ngIf="isUploading" type="success" [value]="percent" [striped]="true" [animated]="true"><i [textContent]="percent + '%'"></i></ngb-progressbar></p>
-                            <button *ngIf="item.video != 'none'" [routerLink]="['video',item.video]">Просмотреть видео</button>
-                          
-                            <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
-                            <ngb-alert *ngIf="alertWinner.show" [type]="alertWinner.type" (close)="alertWinner.close()">{{ alertWinner.message }}</ngb-alert>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                </ng-template>
-                
-            </div>
-        </div>
+    <div class="actions col-md-8 col-12" style="padding:0;">
+        <input #fileInput [hidden]="isUploading" *ngIf="checkUploadVideo()" type="file" name="image" (change)="uploadVideo($event)" accept="video/mp4,video/x-m4v,video/*" />
+        <button *ngIf="checkJudge()" (click)="setWinner()">Сделать победителем</button>
+        <p><ngb-progressbar *ngIf="isUploading" type="success" [value]="percent" [striped]="true" [animated]="true"><i [textContent]="percent + '%'"></i></ngb-progressbar></p>
+        <button *ngIf="participant.video != 'none'" [routerLink]="['video',participant.video]">Просмотреть видео</button>
+      
+        <ngb-alert class="alert-message" *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
+        <ngb-alert class="alert-message" *ngIf="alertWinner.show" [type]="alertWinner.type" (close)="alertWinner.close()">{{ alertWinner.message }}</ngb-alert>
     </div>
+</div>
+</div>
 </div>

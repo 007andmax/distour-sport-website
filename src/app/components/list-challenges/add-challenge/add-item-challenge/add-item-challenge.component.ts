@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/class/user';
-import { subjects_workout_junior_challenge_ru, descriptions_workout_junior_challenge_ru, requirements_workout_junior_challenge_ru, TYPE_WORKOUT, photos_workout_junior_1, photos_workout_junior_10, photos_workout_junior_2, photos_workout_junior_3, photos_workout_junior_4, photos_workout_junior_5, photos_workout_junior_6, photos_workout_junior_7, photos_workout_junior_8, photos_workout_junior_9, RANK_JUNIOR, TYPE_FREE, ranks, rank_txt } from 'src/app/const/const';
-import { txt_add_challenge_success, txt_not_exist_money_add_challenge, txt_service_busy } from 'src/app/const/const-txt';
+import { subjects_workout_junior_challenge_ru, descriptions_workout_junior_challenge_ru, requirements_workout_junior_challenge_ru, TYPE_WORKOUT, photos_workout_junior_1, photos_workout_junior_10, photos_workout_junior_2, photos_workout_junior_3, photos_workout_junior_4, photos_workout_junior_5, photos_workout_junior_6, photos_workout_junior_7, photos_workout_junior_8, photos_workout_junior_9, RANK_JUNIOR, TYPE_FREE, ranks, photos_workout_junior_11 } from 'src/app/const/const';
+import { rank_txt, txt_add_challenge_success, txt_not_exist_money_add_challenge, txt_service_busy } from 'src/app/const/const-txt';
 import { ChallengeService } from 'src/app/services/challenge/challenge.service';
 import { UserStateService } from 'src/app/state/user/user-state.service';
 import { Alert } from '../../class/alert';
@@ -20,7 +20,7 @@ export class AddItemChallengeComponent implements OnInit {
   @Input() type = TYPE_WORKOUT;
   @Input() rank = RANK_JUNIOR;
   @Input() bet = 0.25;
-  TYPE_WORKOUT:string = TYPE_WORKOUT;
+  TYPE_WORKOUT: string = TYPE_WORKOUT;
   subjects_workout_junior_challenge_ru: Array<string> = subjects_workout_junior_challenge_ru;
   descriptions_workout_junior_challenge_ru: Array<string> = descriptions_workout_junior_challenge_ru;
   requirements_workout_junior_challenge_ru: Array<string> = requirements_workout_junior_challenge_ru;
@@ -74,6 +74,7 @@ export class AddItemChallengeComponent implements OnInit {
       if (this.index === 7) images = photos_workout_junior_8;
       if (this.index === 8) images = photos_workout_junior_9;
       if (this.index === 9) images = photos_workout_junior_10;
+      if (this.index === 10) images = photos_workout_junior_11;
     }
     console.log("images", images);
     const modalRef = this.modalService.open(HowDoComponent);

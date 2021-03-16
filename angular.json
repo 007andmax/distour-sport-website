@@ -26,7 +26,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/payeer_1169085457.txt"
+              "src/assets/payeer_1169085457.txt",
+              "src/assets/googleaab75bf33e63038b.html"
             ],
             "styles": [
              
@@ -39,7 +40,9 @@
               "src/assets/css/app.css",
               "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/lib/jsmpeg.min.js"
+            ]
           },
           "configurations": {
             "production": {

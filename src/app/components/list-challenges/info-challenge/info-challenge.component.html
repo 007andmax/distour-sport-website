@@ -49,4 +49,22 @@
     </div>
 </div>
 <app-judge *ngIf="!showPreloader" [challenge]="challenge" [user]="user"></app-judge>
-<app-participant *ngIf="!showPreloader" [challenge]="challenge" [user]="user"></app-participant>
+
+<div class="row" *ngIf="!showPreloader" >
+    <div class="col-md-12">
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3>Участники</h3>
+            </div>
+            <div class="tamara-body-body servcies-add">
+
+
+                <ng-template ngFor let-item [ngForOf]="challenge.participants" [ngForTrackBy]="trackById">
+                    <app-participant *ngIf="!showPreloader" [challenge]="challenge" [user]="user" [participant]="item"></app-participant>
+                </ng-template>
+                
+            </div>
+        </div>
+    </div>
+</div>
+ 

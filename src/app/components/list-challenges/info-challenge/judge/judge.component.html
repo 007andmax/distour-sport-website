@@ -15,7 +15,7 @@
            
             <div class="actions">
                   <button *ngIf="checkUser()" (click)="addJudge()">Стать судьёй</button>
-                  <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
+                  <ngb-alert class="alert-message" *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>
             </div>
             </div>
         </div>

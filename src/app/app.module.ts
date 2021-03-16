@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Injectable, NgModule } from '@angular/core';
-import {IMaskModule} from 'angular-imask';
+import { IMaskModule } from 'angular-imask';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
@@ -17,7 +17,7 @@ import { SportFailedComponent } from './components/sport-failed/sport-failed.com
 import { PaymentsService } from './services/payments/payments.service';
 import { HomeComponent } from './components/home/home.component';
 import { ServicesComponent } from './components/services/services.component';
- 
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from 'ng-sidebar';
 import { HeaderComponent } from './components/header/header.component';
@@ -39,23 +39,19 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddChallengeComponent } from './components/list-challenges/add-challenge/add-challenge.component';
 import { AddItemChallengeComponent } from './components/list-challenges/add-challenge/add-item-challenge/add-item-challenge.component';
 import { FaqComponent } from './components/faq/faq.component';
- 
+
 import { ChallengeSocketService } from './services/socket/challenge-socket.service';
 import { OverlayModule } from "@angular/cdk/overlay";
- 
- 
- var firebaseConfig = {
-  apiKey: "AIzaSyBqb4yqfaBKrYAYLUdMSvSRJ5JqCTfs7Xo",
-    authDomain: "sport-challenges-80bc7.firebaseapp.com",
-    databaseURL: "https://sport-challenges-80bc7.firebaseio.com",
-    projectId: "sport-challenges-80bc7",
-    storageBucket: "sport-challenges-80bc7.appspot.com",
-    messagingSenderId: "901851542377",
-    appId: "1:901851542377:web:9c822c1d4e30d525c303f8",
-    measurementId: "G-7YD0WP1S3J"
-};
+import { SupportComponent } from './components/support/support.component';
+import { SupportItemComponent } from './components/support/support-item/support-item.component';
+import { SupportAddComponent } from './components/support/support-add/support-add.component';
+import { SupportFilterComponent } from './components/support/support-filter/support-filter.component';
+import { SupportItemInfoComponent } from './components/support/support-item-info/support-item-info.component';
+import { environment } from 'src/environments/environment';
 
- 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,8 +77,13 @@ import { OverlayModule } from "@angular/cdk/overlay";
     AddChallengeComponent,
     AddItemChallengeComponent,
     FaqComponent,
-     
-    
+    SupportComponent,
+    SupportItemComponent,
+    SupportAddComponent,
+    SupportFilterComponent,
+    SupportItemInfoComponent,
+
+
   ],
   imports: [
     CommonModule,
@@ -90,22 +91,23 @@ import { OverlayModule } from "@angular/cdk/overlay";
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAnalyticsModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule,
     IMaskModule,
     FormsModule,
     SidebarModule.forRoot(),
     NgbModule,
-    OverlayModule ,
+    OverlayModule,
     InfiniteScrollModule,
-    ToastrModule.forRoot() ,
-   
+    ToastrModule.forRoot(),
+
   ],
-  entryComponents:[RulesComponent,
-  HowDoComponent],
+  entryComponents: [RulesComponent,
+    HowDoComponent],
   providers: [
-    AuthService, 
+    AuthService,
     PaymentsService,
     ChallengeSocketService,
     ToastrService,

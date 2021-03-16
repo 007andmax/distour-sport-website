@@ -1,0 +1,39 @@
+<div class="row">
+    <div
+        class="col-md-12"
+    >
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3 [textContent]="'Тема: ' + item.subject"></h3>
+            </div>
+            <div
+                class="tamara-body-body servcies-add"
+                style="outline: none;"
+            >
+                <div class="row">
+                    <ng-template ngFor let-supportItem
+            [ngForOf]="item.list"
+            [ngForTrackBy]="trackById">
+  <div class="col-md-10 col-9">
+                        <p [textContent]="'Вопрос: ' + supportItem.question"></p>
+                        <p [innerHTML]="'Ответ: ' + getAnswer(supportItem.answer)"></p>
+                         <p [innerHTML]="'Дата: ' + getDate(supportItem.time)"></p>
+                    </div>
+</ng-template> 
+<div class="col-12" *ngIf="!item.cancel">
+    <p [textContent]="txt_close_support_item"></p>
+     <button (click)="closed()">Закрыть</button>
+</div>
+ <div class="col-12 send-support"  *ngIf="isExistAnswer() && !user.isAnonimno() && !item.cancel">  
+                     
+                    <textarea   [attr.placeholder]="hit_support_input" [(ngModel)]="question"  ></textarea>
+                    <button (click)="send()">Отправить</button>
+                </div>
+                    
+                </div>
+                       <ngb-alert *ngIf="alert.show" [type]="alert.type" (close)="alert.close()">{{ alert.message }}</ngb-alert>  
+          
+            </div>
+        </div>
+    </div>
+</div>

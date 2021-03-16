@@ -1,0 +1,16 @@
+.send-support {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  textarea {
+   margin: 0px 1rem  0px 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #303030;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.65);
+    vertical-align: middle;
+    display: inline-block;
+    height: 150px;
+}
+}

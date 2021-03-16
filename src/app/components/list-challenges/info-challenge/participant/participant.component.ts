@@ -23,6 +23,7 @@ export class ParticipantComponent implements OnInit {
   @ViewChild('fileInput', { static: false }) fileInput: any;
   @Input() user: User = new User();
   @Input() challenge: InfoChallenge;
+  @Input() participant:ParticipantChallenge;
   private apiUrl = environment.apiUrl
 
   constructor(private challengeService: ChallengeService) { }
@@ -30,11 +31,11 @@ export class ParticipantComponent implements OnInit {
   ngOnInit() {
     console.log("fileInput", this.fileInput);
   }
-  checkUploadVideo(participant) {
+  checkUploadVideo() {
     if (this.challenge.cancel) return false;
     if (this.user.isAnonimno()) return false;
-    if (participant.video != "none") return false;
-    if (participant._id != this.user._id) return false;
+    if (this.participant.video != "none") return false;
+    if (this.participant._id != this.user._id) return false;
     return true;
   }
   uploadVideo(file) {
@@ -76,8 +77,8 @@ export class ParticipantComponent implements OnInit {
     if (this.user._id != this.challenge.judge._id) return false;
     return true;
   }
-  setWinner(participant) {
-    this.challengeService.setWinner(this.challenge._id, participant._id).subscribe(data => {
+  setWinner() {
+    this.challengeService.setWinner(this.challenge._id, this.participant._id).subscribe(data => {
       this.alertWinner.setData("success", txt_info_set_winner_success);
     },err => {
       this.alert.setData("danger", txt_service_busy);
@@ -101,9 +102,9 @@ export class ParticipantComponent implements OnInit {
     this.fileInput.nativeElement.value = null;
   }
 
-  isAddVideo(participant) {
-    if (participant._id == this.user._id) {
-      return (participant.video == "none") ? true : false;
+  isAddVideo() {
+    if (this.participant._id == this.user._id) {
+      return (this.participant.video == "none") ? true : false;
     } else {
       return false;
     }

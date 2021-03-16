@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/class/user';
-import { subjects_workout_junior_challenge_ru, descriptions_workout_junior_challenge_ru, requirements_workout_junior_challenge_ru, TYPE_WORKOUT, photos_workout_junior_1, photos_workout_junior_2, photos_workout_junior_3, photos_workout_junior_4, photos_workout_junior_5, photos_workout_junior_6, photos_workout_junior_7, photos_workout_junior_8, photos_workout_junior_9, photos_workout_junior_10, TYPE_FREE, RANK_JUNIOR, ROLE_JUDGE } from 'src/app/const/const';
+import { subjects_workout_junior_challenge_ru, descriptions_workout_junior_challenge_ru, requirements_workout_junior_challenge_ru, TYPE_WORKOUT, photos_workout_junior_1, photos_workout_junior_2, photos_workout_junior_3, photos_workout_junior_4, photos_workout_junior_5, photos_workout_junior_6, photos_workout_junior_7, photos_workout_junior_8, photos_workout_junior_9, photos_workout_junior_10, TYPE_FREE, RANK_JUNIOR, ROLE_JUDGE, photos_workout_junior_11 } from 'src/app/const/const';
 import { txt_info_add_judge_failed, txt_info_participate_in_challenge_success, txt_not_exist_money_participate_challenge, txt_service_busy } from 'src/app/const/const-txt';
 import { ChallengeItemFinish } from 'src/app/interfaces/socket-challenge-item-finish';
 import { ChallengeItemJudge } from 'src/app/interfaces/socket-challenge-item-judge';
@@ -27,8 +27,8 @@ export class InfoChallengeComponent implements OnInit {
   user: User = new User();
   challenge: InfoChallenge;
   showPreloader: boolean = true;
-  TYPE_WORKOUT:string = TYPE_WORKOUT;
-  TYPE_FREE:string = TYPE_FREE;
+  TYPE_WORKOUT: string = TYPE_WORKOUT;
+  TYPE_FREE: string = TYPE_FREE;
   subjects_workout_junior_challenge_ru: Array<string> = subjects_workout_junior_challenge_ru;
   descriptions_workout_junior_challenge_ru: Array<string> = descriptions_workout_junior_challenge_ru;
   requirements_workout_junior_challenge_ru: Array<string> = requirements_workout_junior_challenge_ru;
@@ -54,7 +54,7 @@ export class InfoChallengeComponent implements OnInit {
       this.showPreloader = false;
     })
     this.challengeSocketService.upload_video.subscribe(data => {
-      console.log("data",data);
+      console.log("data", data);
       if (data.challenge_id == this.challenge._id) {
         let index = this.challenge.participants.findIndex(item => item._id == data.user_id);
         if (index > -1) this.challenge.participants[index].video = data.video;
@@ -66,12 +66,12 @@ export class InfoChallengeComponent implements OnInit {
       }))
     })
 
-    this.challengeSocketService.add_judge.subscribe((data:ChallengeItemJudge) => {
-      console.log("data",data);
+    this.challengeSocketService.add_judge.subscribe((data: ChallengeItemJudge) => {
+      console.log("data", data);
       if (data.challenge_id == this.challenge._id) this.challenge.judge = new Judge(data);
     })
-    this.challengeSocketService.finish_challenge.subscribe((data:ChallengeItemFinish) => {
-      console.log("data",data);
+    this.challengeSocketService.finish_challenge.subscribe((data: ChallengeItemFinish) => {
+      console.log("data", data);
       if (data.challenge_id == this.challenge._id) {
         let index = this.challenge.participants.findIndex(item => item._id == data.user_id);
         if (index > -1) {
@@ -120,6 +120,7 @@ export class InfoChallengeComponent implements OnInit {
       if (this.challenge.index === 7) images = photos_workout_junior_8;
       if (this.challenge.index === 8) images = photos_workout_junior_9;
       if (this.challenge.index === 9) images = photos_workout_junior_10;
+      if (this.challenge.index === 10) images = photos_workout_junior_11;
     }
     console.log("images", images);
     const modalRef = this.modalService.open(HowDoComponent);
@@ -130,5 +131,7 @@ export class InfoChallengeComponent implements OnInit {
     const modalRef = this.modalService.open(RulesComponent);
 
   }
-
+  public trackById(index, item) {
+    return item._id;
+  }
 }

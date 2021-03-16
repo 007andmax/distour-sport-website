@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { types_txt, types, rank_txt, ranks } from 'src/app/const/const';
+import { types, ranks } from 'src/app/const/const';
+import { types_txt, rank_txt } from 'src/app/const/const-txt';
 
 @Component({
   selector: 'app-filters',

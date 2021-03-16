@@ -1,0 +1,17 @@
+ <app-support-filter (onChangeStatus)="onChangeStatus($event)"></app-support-filter>
+<div  infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="15"
+[infiniteScrollDisabled]="infiniteScrollDisabled"
+(scrolled)="onScroll()">
+
+<ng-template ngFor let-item
+            [ngForOf]="list"
+            [ngForTrackBy]="trackById">
+<app-support-item  [item]="item"></app-support-item>
+</ng-template>
+</div>
+<div class="add-container" *ngIf="!user.isAnonimno()">
+    <button routerLink="/support/add" class="btn btn-warning" style="padding: 0 1rem;"> <i class="fa fa-plus"></i></button>
+   
+</div>

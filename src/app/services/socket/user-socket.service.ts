@@ -8,17 +8,18 @@ import { environment } from 'src/environments/environment';
 })
 export class UserSocketService {
   private apiSocket = environment.apiSocket;
+  apiUrl = environment.apiUrl;
   money_change = new EventEmitter<any>();
   notification = new EventEmitter<any>();
   socketServer;
-  constructor() { 
-   
+  constructor() {
+
   }
-  public onInit(user:User) {
-    this.socketServer = io.connect(`${this.apiSocket}user`);
-    this.socketServer.emit("create_room",{_id:user._id})
+  public onInit(user: User) {
+    this.socketServer = io.connect(`${this.apiUrl}user`);
+    this.socketServer.emit("create_room", { _id: user._id })
     this.socketServer.on('connect', (data) => {
-      console.log("connect UserSocketService",data);
+      console.log("connect UserSocketService", data);
     });
     this.socketServer.on('money_change', (msg) => {
       console.log(" money_change", msg);
