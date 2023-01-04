@@ -1,24 +1,60 @@
-<div class="row"><div class="col-md-12" [routerLink]="['challenge',item._id]">
-    <div class="tamara-body">
-        <div class="tamara-body-head">
-            <h3 [textContent]="subjects_workout_junior_challenge_ru[item.index]"></h3>
-        </div>
-        <div class="tamara-body-body servcies-add" style="cursor: pointer;outline: none;">
-           <div class="row"><div class="col-md-2 col-3"><div class="logo">
-                <img src="assets/img/workout.png" width="64" height="64" *ngIf="item.type === TYPE_WORKOUT || item.type === TYPE_FREE" />
-            </div></div> <div class="col-md-10 col-9">
-            <div class="description">
-                <p [textContent]="descriptions_workout_junior_challenge_ru[item.index]"></p>
-                <p [innerHTML]="requirements_workout_junior_challenge_ru[item.index]"></p><br/>
-            </div> 
-        </div></div>
-        <div class="counters row"><div class="col-md-2"></div><div class="col-md-4 col-6  mb-3">
-            <p ><span [textContent]="'Депозит: ' + item.bet"></span><img src="assets/img/ic_coin.png"
-                style="margin-left: 10px;width:14px;" /></p> 
-        </div>  <div class="col-md-4 col-6">     <p ><span [textContent]="'Банк: ' + item.bank"></span><img src="assets/img/ic_coin.png"
-            style="margin-left: 10px;width:14px;" /></p> 
-            </div>  <div class="col-md-2 col-6">   <p [textContent]="'Уч-ков: ' + item.participants.length"></p>
-        </div>  </div>
+<div class="row">
+    <div
+        class="col-md-12"
+        [routerLink]="['challenge',item._id]"
+    >
+        <div class="tamara-body">
+            <div class="tamara-body-head">
+                <h3 [textContent]="subjects_workout_junior_challenge_ru[item.index]"></h3>
+            </div>
+            <div
+                class="tamara-body-body servcies-add"
+                style="cursor: pointer;outline: none;"
+            >
+                <div class="row">
+                    <div class="col-md-2 col-3">
+                        <div class="logo">
+                            <img
+                                src="assets/img/workout.png"
+                                width="64"
+                                height="64"
+                                *ngIf="item.type === TYPE_WORKOUT || item.type === TYPE_FREE"
+                            >
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-9">
+                        <div class="description">
+                            <p [textContent]="descriptions_workout_junior_challenge_ru[item.index]"></p>
+                            <p [innerHTML]="requirements_workout_junior_challenge_ru[item.index]"></p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="counters row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4 col-6  mb-3">
+                        <p>
+                            <span [textContent]="'Депозит: ' + item.bet"></span>
+                            <img
+                                src="assets/img/ic_coin.png"
+                                style="margin-left: 10px;width:14px;"
+                            >
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <p>
+                            <span [textContent]="'Банк: ' + item.bank"></span>
+                            <img
+                                src="assets/img/ic_coin.png"
+                                style="margin-left: 10px;width:14px;"
+                            >
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <p [textContent]="'Уч-ков: ' + item.participants.length"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div></div>
+</div>

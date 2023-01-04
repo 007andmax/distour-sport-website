@@ -1,4 +1,4 @@
-export const txt_info_participate_in_challenge_success = "Вы были добавлены";
+export const txt_info_participate_in_challenge_success = "Вы были добавлены, теперь вы можете загрузить видео.";
 export const txt_not_exist_money_participate_challenge = "Извините, у вас не достаточно средств что бы учавстовать в челлендже";
 export const txt_service_busy = "Извините сервис не работает. Пожалуйста попробуйте позже.";
 export const txt_info_add_judge_failed = "Вы не можете учавстовать";

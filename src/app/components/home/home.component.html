@@ -1,1 +1,51 @@
-<app-list-challenges></app-list-challenges>
+<div>
+    <ng-template
+        ngFor
+        let-item
+        let-i="index"
+        [ngForOf]="list"
+        [ngForTrackBy]="trackByIndex"
+    >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tamara-body">
+                    <div class="tamara-body-head">
+                        <h3 [textContent]="item.name"></h3>
+                    </div>
+                    <div
+                        class="tamara-body-body servcies-add"
+                        style="outline: none;"
+                    >
+                        <div class="row">
+                            <div class="col-md-2 col-3">
+                                <div class="logo">
+                                    <img
+                                        [src]="item.pic"
+                                        width="100%"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-9">
+                                <div class="description">
+                                    <p [textContent]="item.description"></p>
+                                    <p>Products you can purchase:</p>
+                                    <ul>
+                                        <ng-template
+                                            ngFor
+                                            let-element
+                                            [ngForOf]="item.list_items"
+                                        >
+                                            <li [textContent]="element"></li>
+                                        </ng-template>
+                                    </ul>
+                                    <br>
+                                    <button [routerLink]="['boy',i]">view</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

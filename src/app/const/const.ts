@@ -4,7 +4,10 @@ export const RANK_JUNIOR = "JUNIOR";
 export const ROLE_JUDGE = "JUDGE";
 export const ROLE_ADMIN = "ADMIN";
 export const types = ["WORKOUT"];
-
+export const PAYMENT_TYPE_BRAINTREE = "PAYMENT_TYPE_BRAINTREE";
+export const PAYMENT_TYPE_PAYPAL = "PAYMENT_TYPE_PAYPAL";
+export const PAYMENT_TYPE_GOOGLE_PAY = "PAYMENT_TYPE_GOOGLE_PAY";
+export const CLIENT_AUTHORIZATION = "sandbox_s9pf532h_prbghqypzg74dztt";
 export const ranks = ["JUNIOR", "MIDDLE", "SENIOR"];
 
 export const subjects_workout_junior_challenge_ru = ["Подтягивания", "Отжимания", "Приседания", "Уголок на перекладине", "Отжиманий на брусьях",
@@ -105,3 +108,34 @@ export const photos_workout_junior_10 = ["assets/photos/workout/junior/10/1.jpg"
     "assets/photos/workout/junior/10/2.jpg",];
 export const photos_workout_junior_11 = ["assets/photos/workout/junior/11/1.jpeg",
     "assets/photos/workout/junior/11/2.jpeg",];
+
+
+/* NEW */
+export const list_boys = [
+    {
+        name: "Alex",
+        pic: "assets/img/alex/avatar.jpg",
+        description: "Subscription including: All 4k long flexing videos from Alex, subscription on Alex's telegram Channel with daily awesome content   you can easily cancel your subscription in your account page every time you want. (after canceling subscription access to pages will close directly)",
+        list_items: ["Flexing video", "Personal video", "Training programs"]
+    }
+];
+export const liest_category_boy = [[
+    {
+        name: "Flexing video",
+        pic: "assets/img/alex/flexing.jpg",
+        description: "Here are flexing videos, in 4k quality, duration 1-3 minutes. We can see my progress, and see how well my program works, and then buy a more expensive plan.",
+        price: 3
+    },
+    {
+        name: "Personal video",
+        pic: "assets/img/alex/personal.jpg",
+        description: "Here are personal videos. Compiled according to your preliminary description with examples of what you would like to see in this video, duration up to 5 minutes",
+        price: 15
+    },
+    {
+        name: "Training programs",
+        pic: "assets/img/alex/training.jpg",
+        description: "Here you get a personal training program. 4 times a week you will receive a description of the training, a video on how to perform the element. And support for all training sessions.",
+        price: 50
+    }
+]];

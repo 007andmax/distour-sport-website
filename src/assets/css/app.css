@@ -75,6 +75,7 @@
 
 body {
  background: url("../img/background.jpg") 50% 0/cover no-repeat fixed #222; 
+  min-height: 100vh;
  
 }
 

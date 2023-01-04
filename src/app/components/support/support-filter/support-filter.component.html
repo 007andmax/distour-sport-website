@@ -5,18 +5,36 @@
                 <h3>Filter</h3>
             </div>
             <div class="tamara-body-body servcies-add">
-                <div ngbDropdown class="d-inline-block">
-                    <button class="btn btn-outline-primary" id="dropdownType" ngbDropdownToggle [textContent]="'Статус: ' + status"></button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownType">
-                        <ng-template ngFor let-item
-                        [ngForOf]="listStatus"
-                        let-i="index"
-                        [ngForTrackBy]="trackByIndex">
-                        <button ngbDropdownItem [textContent]="item" (click)="selectStatus(i)"></button>
-                       </ng-template>
+                <div
+                    ngbDropdown
+                    class="d-inline-block"
+                >
+                    <button
+                        class="btn btn-outline-primary"
+                        id="dropdownType"
+                        ngbDropdownToggle
+                        [textContent]="'Статус: ' + status"
+                    ></button>
+                    <div
+                        ngbDropdownMenu
+                        aria-labelledby="dropdownType"
+                    >
+                        <ng-template
+                            ngFor
+                            let-item
+                            [ngForOf]="listStatus"
+                            let-i="index"
+                            [ngForTrackBy]="trackByIndex"
+                        >
+                            <button
+                                ngbDropdownItem
+                                [textContent]="item"
+                                (click)="selectStatus(i)"
+                            ></button>
+                        </ng-template>
                     </div>
-                  </div>
-                
+                </div>
+
             </div>
         </div>
     </div>

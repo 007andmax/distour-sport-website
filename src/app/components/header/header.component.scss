@@ -1,1 +1,15 @@
 .profile.dropdown-item{background: #fff;}.profile.dropdown-item img{margin-bottom:10px;}.profile.dropdown-item p{margin-bottom:0;line-height: 32px;}.profile.dropdown-item:hover{background: #fff;;}
+.header-menu {
+    display: flex;
+    align-items: center;
+    a {
+        margin-right: 20px;
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

@@ -48,6 +48,16 @@ import { SupportAddComponent } from './components/support/support-add/support-ad
 import { SupportFilterComponent } from './components/support/support-filter/support-filter.component';
 import { SupportItemInfoComponent } from './components/support/support-item-info/support-item-info.component';
 import { environment } from 'src/environments/environment';
+import { BoyComponent } from './components/boy/boy.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { TermsConditionsComponent } from './components/documents/terms-conditions/terms-conditions.component';
+import { ReturnPolicyComponent } from './components/documents/return-policy/return-policy.component';
+import { PrivacyPolicyComponent } from './components/documents/privacy-policy/privacy-policy.component';
+import { FaqOrdersComponent } from './components/faq/faq-orders/faq-orders.component';
+import { FaqGeneralComponent } from './components/faq/faq-general/faq-general.component';
+import { DietExerciseComponent } from './components/faq/diet-exercise/diet-exercise.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -82,6 +92,16 @@ import { environment } from 'src/environments/environment';
     SupportAddComponent,
     SupportFilterComponent,
     SupportItemInfoComponent,
+    BoyComponent,
+    AboutComponent,
+    ContactComponent,
+    TermsConditionsComponent,
+    ReturnPolicyComponent,
+    PrivacyPolicyComponent,
+    FaqOrdersComponent,
+    FaqGeneralComponent,
+    DietExerciseComponent,
+    FooterComponent,
 
 
   ],

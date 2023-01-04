@@ -1,0 +1,9 @@
+.faq-f {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}

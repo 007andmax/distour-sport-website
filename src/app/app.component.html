@@ -1,27 +1,56 @@
 <ng-sidebar-container>
-  
-  <!-- A sidebar -->
-  <ng-sidebar [(opened)]="_opened" class="left-menu">
-   <div class="left-menu-body">
-   <div class="menu-list">
-    <p routerLink="/faq" (click)="_opened = false">FAQ</p>
-    <p routerLink="/profile" *ngIf="!user.isAnonimno()" (click)="_opened = false">Профиль</p>
-     <p routerLink="/services" (click)="_opened = false">Услуги</p>
-       <p routerLink="/support" *ngIf="!user.isAnonimno()" (click)="_opened = false" [textContent]="getSupportText()"></p>
-   </div>
-   </div>
-  </ng-sidebar>
 
-  
+    <!-- A sidebar -->
+    <ng-sidebar
+        [(opened)]="_opened"
+        class="left-menu"
+    >
+        <div class="left-menu-body">
+            <div class="menu-list">
+                <p
+                    routerLink="/about"
+                    (click)="_opened = false"
+                >
+                    About
+                </p>
+                <p
+                    routerLink="/faq"
+                    (click)="_opened = false"
+                >
+                    FAQ
+                </p>
+                <p
+                    routerLink="/contact"
+                    (click)="_opened = false"
+                >
+                    contact
+                </p>
+                <p
+                    routerLink="/profile"
+                    *ngIf="!user.isAnonimno()"
+                    (click)="_opened = false"
+                >
+                    Профиль
+                </p>
+                <p
+                    routerLink="/support"
+                    *ngIf="!user.isAnonimno()"
+                    (click)="_opened = false"
+                    [textContent]="getSupportText()"
+                ></p>
+            </div>
+        </div>
+    </ng-sidebar>
+
 </ng-sidebar-container>
 <app-header (onToggleMenu)="toggleLeftMenu()"></app-header>
 <div class="csgo-fon">
 
-  <div class="tamara">
-      <div class="container">
-          <router-outlet></router-outlet>
-      </div>
+    <div class="tamara">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
 
-
-  </div>
+    </div>
 </div>
+<app-footer></app-footer>

@@ -1,0 +1,82 @@
+<div>
+    <ng-template
+        ngFor
+        let-item
+        let-i="index"
+        [ngForOf]="list[index]"
+        [ngForTrackBy]="trackByIndex"
+    >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tamara-body">
+                    <div class="tamara-body-head">
+                        <h3 [textContent]="item.name"></h3>
+                    </div>
+                    <div
+                        class="tamara-body-body servcies-add"
+                        style="outline: none;"
+                    >
+                        <div class="row">
+                            <div class="col-md-2 col-3">
+                                <div class="logo">
+                                    <img
+                                        [src]="item.pic"
+                                        width="100%"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-9">
+                                <div class="description">
+                                    <p [textContent]="item.description"></p>
+                                    <br>
+                                    <div
+                                        ngbDropdown
+                                        class="d-inline-block"
+                                    >
+                                        <button
+                                            class="btn btn-outline-primary"
+                                            id="dropdownType"
+                                            ngbDropdownToggle
+                                            [textContent]="'Select payment method: ' + selectedPayment.title"
+                                        ></button>
+                                        <div
+                                            ngbDropdownMenu
+                                            aria-labelledby="dropdownType"
+                                        >
+                                            <ng-template
+                                                ngFor
+                                                let-item
+                                                [ngForOf]="listPayments"
+                                                let-i="index"
+                                                [ngForTrackBy]="trackByIndex"
+                                            >
+                                                <button
+                                                    ngbDropdownItem
+                                                    [textContent]="item.title"
+                                                    (click)="selectPaymentMethod(i)"
+                                                ></button>
+                                            </ng-template>
+                                        </div>
+                                    </div>
+                                    <button
+                                        [disabled]="disabledSubmit"
+                                        [textContent]="'buy - $' + item.price"
+                                        (click)="buy(item.price)"
+                                    ></button>
+                                    <div
+                                        id="dropin-container"
+                                        [hidden]="selectedPayment.value != 'PAYMENT_TYPE_BRAINTREE'"
+                                    ></div>
+                                    <div
+                                        id="paypal-button"
+                                        [hidden]="selectedPayment.value != 'PAYMENT_TYPE_PAYPAL'"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
